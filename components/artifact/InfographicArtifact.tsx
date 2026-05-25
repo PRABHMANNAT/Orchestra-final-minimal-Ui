@@ -43,7 +43,7 @@ type InfographicArtifactProps = {
   children?: React.ReactNode
 }
 
-const CHART_COLORS = ["#df5f12", "#f59e0b", "#10b981", "#3b82f6", "#8b5cf6", "#ef4444"]
+const CHART_COLORS = ["#B8543D", "#f59e0b", "#10b981", "#3b82f6", "#8b5cf6", "#ef4444"]
 const ARISTOTLE = "Socrates"
 
 async function copyText(text: string) {
@@ -56,7 +56,7 @@ async function elementToPngBlob(element: HTMLElement) {
   clone.setAttribute("xmlns", "http://www.w3.org/1999/xhtml")
   clone.style.width = `${Math.max(rect.width, 320)}px`
   clone.style.minHeight = `${Math.max(rect.height, 180)}px`
-  clone.style.background = "#fffaf2"
+  clone.style.background = "#FFFFFF"
 
   const serialized = new XMLSerializer().serializeToString(clone)
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${rect.width}" height="${rect.height}"><foreignObject width="100%" height="100%">${serialized}</foreignObject></svg>`
@@ -161,7 +161,7 @@ function BlockShell({ block, children, onDrill }: { block: ArtifactBlock; childr
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 8 }}
       whileHover={{ y: -3 }}
-      className="group relative overflow-hidden rounded-[1.75rem] border border-[var(--pm-border)] bg-[var(--pm-card)] p-5 shadow-[0_18px_60px_rgba(36,31,24,0.08)] backdrop-blur-xl transition-colors dark:shadow-none"
+      className="group relative overflow-hidden rounded-[1.75rem] border border-[var(--pm-border)] bg-[var(--pm-card)] p-5 shadow-[0_18px_60px_rgba(26, 22, 18,0.08)] backdrop-blur-xl transition-colors dark:shadow-none"
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--pm-accent)]/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
       <div className="absolute right-4 top-4 z-20 flex items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100">
@@ -251,7 +251,7 @@ function LineBlock({ block }: { block: Extract<ArtifactBlock, { kind: "line-char
           <XAxis dataKey="label" tick={{ fill: "var(--pm-muted)", fontSize: 11 }} tickLine={false} axisLine={false} />
           <YAxis hide />
           <Tooltip contentStyle={{ background: "var(--pm-tooltip-bg)", border: "1px solid var(--pm-border)", borderRadius: 14, color: "var(--pm-text)" }} />
-          <Line type="monotone" dataKey="value" stroke="#df5f12" strokeWidth={3} dot={{ r: 4, fill: "#df5f12" }} />
+          <Line type="monotone" dataKey="value" stroke="#B8543D" strokeWidth={3} dot={{ r: 4, fill: "#B8543D" }} />
         </LineChart>
       </ResponsiveContainer>
     </div>
@@ -284,18 +284,18 @@ function FlowBlock({ block }: { block: Extract<ArtifactBlock, { kind: "flow" }> 
       {block.title && <h3 className="mb-4 text-sm font-medium text-[var(--pm-text)]">{block.title}</h3>}
       <svg viewBox="0 0 560 280" className="h-[280px] w-full rounded-2xl bg-[var(--pm-chip)]">
         <defs>
-          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#df5f12" /></marker>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#B8543D" /></marker>
         </defs>
         {block.edges.map((edge, i) => {
           const source = find(edge.source)
           const target = find(edge.target)
           if (!source || !target) return null
-          return <path key={i} d={`M${source.x + 58},${source.y + 24} C${source.x + 110},${source.y + 24} ${target.x - 50},${target.y + 24} ${target.x},${target.y + 24}`} fill="none" stroke="#df5f12" strokeWidth="2" markerEnd="url(#arrow)" opacity="0.8" />
+          return <path key={i} d={`M${source.x + 58},${source.y + 24} C${source.x + 110},${source.y + 24} ${target.x - 50},${target.y + 24} ${target.x},${target.y + 24}`} fill="none" stroke="#B8543D" strokeWidth="2" markerEnd="url(#arrow)" opacity="0.8" />
         })}
         {layout.map((node) => (
           <g key={node.id} className="cursor-pointer">
-            <rect x={node.x} y={node.y} width="120" height="48" rx="14" fill="#fffaf2" stroke="#ded2c2" />
-            <text x={node.x + 60} y={node.y + 29} textAnchor="middle" fontSize="11" fill="#241f18" fontFamily="monospace">{node.label}</text>
+            <rect x={node.x} y={node.y} width="120" height="48" rx="14" fill="#FFFFFF" stroke="#78716C" />
+            <text x={node.x + 60} y={node.y + 29} textAnchor="middle" fontSize="11" fill="#1A1612" fontFamily="monospace">{node.label}</text>
           </g>
         ))}
       </svg>

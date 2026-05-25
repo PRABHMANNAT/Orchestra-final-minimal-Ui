@@ -5,7 +5,7 @@ import { ScoreBadge } from "@/components/ScoreBadge"
 export function CandidateProfile({ candidate }: { candidate: DemoCandidate }) {
   return (
     <div className="space-y-5">
-      <div className="rounded-[1.75rem] border border-[var(--pm-border)] bg-[var(--pm-card)] p-6 shadow-[0_18px_60px_rgba(36,31,24,0.08)]">
+      <div className="rounded-[1.75rem] border border-[var(--pm-border)] bg-[var(--pm-card)] p-6 shadow-[0_18px_60px_rgba(26, 22, 18,0.08)]">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
           <div>
             <div className="text-[10px] uppercase tracking-[0.24em] text-[var(--pm-subtle)]">Candidate profile</div>

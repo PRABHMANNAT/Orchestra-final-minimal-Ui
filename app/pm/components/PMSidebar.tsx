@@ -43,7 +43,7 @@ export default function PMSidebar() {
     return (
         <div
             className={cn(
-                "flex flex-col py-4 bg-[#f8f3ea] border border-[#ded2c2] shrink-0 z-50 transition-all duration-300 ease-out group/sidebar m-4 h-fit my-auto rounded-[2.5rem] shadow-2xl relative gap-2 dark:bg-[#121212] dark:border-white/10",
+                "flex flex-col py-4 bg-[#FAF8F5] border border-[#78716C] shrink-0 z-50 transition-all duration-300 ease-out group/sidebar m-4 h-fit my-auto rounded-[2.5rem] shadow-2xl relative gap-2 dark:bg-[#121212] dark:border-white/10",
                 `${t.sidebar} backdrop-blur-xl`,
                 isExpanded ? "w-64 px-4 items-start" : "w-[68px] items-center"
             )}
@@ -52,15 +52,15 @@ export default function PMSidebar() {
         >
             {/* Logo area */}
             <div className={cn("flex items-center px-0 w-full", isExpanded ? "justify-start px-2 gap-3" : "justify-center")}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 cursor-pointer shrink-0 hover:bg-[#241f18]/5 dark:hover:bg-black/5 dark:hover:bg-white/5">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 cursor-pointer shrink-0 hover:bg-[#1A1612]/5 dark:hover:bg-black/5 dark:hover:bg-white/5">
                     <IngenLogo size={32} className="w-8 h-8 rounded-lg" />
                 </div>
                 <div className={cn(
                     "flex flex-col overflow-hidden transition-all duration-300",
                     isExpanded ? "opacity-100 max-w-[200px]" : "opacity-0 max-w-0"
                 )}>
-                    <span className="text-sm font-bold text-[#241f18] tracking-wide whitespace-nowrap dark:text-white">iNGEN</span>
-                    <span className="text-[10px] text-[#241f18]/45 font-medium tracking-wider uppercase whitespace-nowrap dark:text-white/40">Hiring Platform</span>
+                    <span className="text-sm font-bold text-[#1A1612] tracking-wide whitespace-nowrap dark:text-white">iNGEN</span>
+                    <span className="text-[10px] text-[#1A1612]/45 font-medium tracking-wider uppercase whitespace-nowrap dark:text-white/40">Hiring Platform</span>
                 </div>
             </div>
 
@@ -83,7 +83,7 @@ export default function PMSidebar() {
                             {/* Active Indicator (Left Bar) */}
                             {isActive && (
                                 <div className={cn(
-                                    "absolute left-0 w-1 h-6 bg-[#FF6B00] rounded-r-full shadow-[0_0_12px_rgba(255,107,0,0.6)] transition-all duration-300",
+                                    "absolute left-0 w-1 h-6 bg-[#B8543D] rounded-r-full shadow-[0_0_12px_rgba(184, 84, 61,0.6)] transition-all duration-300",
                                     isExpanded ? "-left-4" : "left-0"
                                 )} />
                             )}
@@ -91,7 +91,7 @@ export default function PMSidebar() {
                             {/* Icon Wrapper */}
                             <div className={cn(
                                 "relative flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-200",
-                                isActive ? "text-[#DF5F12]" : "text-[#241f18]/45 group-hover:text-[#241f18] group-hover:bg-[#241f18]/5 dark:group-hover:bg-black/5 dark:text-white/40 dark:group-hover:text-white dark:group-hover:bg-white/5"
+                                isActive ? "text-[#B8543D]" : "text-[#1A1612]/45 group-hover:text-[#1A1612] group-hover:bg-[#1A1612]/5 dark:group-hover:bg-black/5 dark:text-white/40 dark:group-hover:text-white dark:group-hover:bg-white/5"
                             )}>
                                 <item.icon className="w-5 h-5" strokeWidth={isActive ? 2.5 : 2} />
                             </div>
@@ -100,14 +100,14 @@ export default function PMSidebar() {
                             <span className={cn(
                                 "text-sm font-medium whitespace-nowrap overflow-hidden transition-all duration-300 ml-3",
                                 isExpanded ? "opacity-100 w-auto translate-x-0" : "opacity-0 w-0 -translate-x-4 absolute",
-                                isActive ? "text-[#241f18] dark:text-white" : "text-[#241f18]/60 group-hover:text-[#241f18] dark:text-white/60 dark:group-hover:text-white"
+                                isActive ? "text-[#1A1612] dark:text-white" : "text-[#1A1612]/60 group-hover:text-[#1A1612] dark:text-white/60 dark:group-hover:text-white"
                             )}>
                                 {item.label}
                             </span>
 
                             {/* Tooltip on Hover (Collapsed Only) */}
                             {!isExpanded && (
-                                <div className="absolute left-16 px-3 py-1.5 bg-[#fffaf2] border border-[#ded2c2] rounded-lg text-xs font-medium text-[#241f18] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-[60] shadow-xl dark:bg-[#1A1A1A] dark:border-white/10 dark:text-white">
+                                <div className="absolute left-16 px-3 py-1.5 bg-[#FFFFFF] border border-[#78716C] rounded-lg text-xs font-medium text-[#1A1612] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-[60] shadow-xl dark:bg-[#1A1A1A] dark:border-white/10 dark:text-white">
                                     {item.label}
                                 </div>
                             )}
@@ -123,31 +123,31 @@ export default function PMSidebar() {
                     className={cn(
                     "h-10 flex items-center transition-all duration-200 relative group w-full",
                     isExpanded ? "justify-start px-2" : "justify-center",
-                    pathname.startsWith("/settings") && "text-[#DF5F12]"
+                    pathname.startsWith("/settings") && "text-[#B8543D]"
                 )}>
                     {pathname.startsWith("/settings") && (
                         <div className={cn(
-                            "absolute left-0 w-1 h-6 bg-[#FF6B00] rounded-r-full shadow-[0_0_12px_rgba(255,107,0,0.6)] transition-all duration-300",
+                            "absolute left-0 w-1 h-6 bg-[#B8543D] rounded-r-full shadow-[0_0_12px_rgba(184, 84, 61,0.6)] transition-all duration-300",
                             isExpanded ? "-left-4" : "left-0"
                         )} />
                     )}
                     <div className={cn(
                         "relative flex items-center justify-center w-10 h-10 rounded-xl transition-all",
                         pathname.startsWith("/settings")
-                            ? "text-[#DF5F12]"
-                            : "text-[#241f18]/45 group-hover:text-[#241f18] group-hover:bg-[#241f18]/5 dark:group-hover:bg-black/5 dark:text-white/40 dark:group-hover:text-white dark:group-hover:bg-white/5"
+                            ? "text-[#B8543D]"
+                            : "text-[#1A1612]/45 group-hover:text-[#1A1612] group-hover:bg-[#1A1612]/5 dark:group-hover:bg-black/5 dark:text-white/40 dark:group-hover:text-white dark:group-hover:bg-white/5"
                     )}>
                         <Settings className="w-5 h-5" />
                     </div>
                     <span className={cn(
                         "text-sm font-medium whitespace-nowrap overflow-hidden transition-all duration-300 ml-3",
-                        pathname.startsWith("/settings") ? "text-[#241f18] dark:text-white" : "text-[#241f18]/60 group-hover:text-[#241f18] dark:text-white/60 dark:group-hover:text-white",
+                        pathname.startsWith("/settings") ? "text-[#1A1612] dark:text-white" : "text-[#1A1612]/60 group-hover:text-[#1A1612] dark:text-white/60 dark:group-hover:text-white",
                         isExpanded ? "opacity-100 w-auto" : "opacity-0 w-0 absolute"
                     )}>
                         Settings
                     </span>
                     {!isExpanded && (
-                        <div className="absolute left-16 px-3 py-1.5 bg-[#fffaf2] border border-[#ded2c2] rounded-lg text-xs font-medium text-[#241f18] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-[60] shadow-xl dark:bg-[#1A1A1A] dark:border-white/10 dark:text-white">
+                        <div className="absolute left-16 px-3 py-1.5 bg-[#FFFFFF] border border-[#78716C] rounded-lg text-xs font-medium text-[#1A1612] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-[60] shadow-xl dark:bg-[#1A1A1A] dark:border-white/10 dark:text-white">
                             Settings
                         </div>
                     )}
@@ -163,17 +163,17 @@ export default function PMSidebar() {
                         isExpanded ? "justify-start px-2" : "justify-center"
                     )}
                 >
-                    <div className="relative flex items-center justify-center w-10 h-10 rounded-xl text-[#241f18]/45 group-hover:text-[#241f18] group-hover:bg-[#241f18]/5 dark:group-hover:bg-black/5 transition-all dark:text-white/40 dark:group-hover:text-white dark:group-hover:bg-white/5">
+                    <div className="relative flex items-center justify-center w-10 h-10 rounded-xl text-[#1A1612]/45 group-hover:text-[#1A1612] group-hover:bg-[#1A1612]/5 dark:group-hover:bg-black/5 transition-all dark:text-white/40 dark:group-hover:text-white dark:group-hover:bg-white/5">
                         <ThemeIcon className="w-5 h-5" strokeWidth={2} />
                     </div>
                     <span className={cn(
-                        "text-sm font-medium whitespace-nowrap overflow-hidden transition-all duration-300 ml-3 text-[#241f18]/60 group-hover:text-[#241f18] dark:text-white/60 dark:group-hover:text-white",
+                        "text-sm font-medium whitespace-nowrap overflow-hidden transition-all duration-300 ml-3 text-[#1A1612]/60 group-hover:text-[#1A1612] dark:text-white/60 dark:group-hover:text-white",
                         isExpanded ? "opacity-100 w-auto" : "opacity-0 w-0 absolute"
                     )}>
                         {isDark ? "Light mode" : "Dark mode"}
                     </span>
                     {!isExpanded && (
-                        <div className="absolute left-16 px-3 py-1.5 bg-[#fffaf2] border border-[#ded2c2] rounded-lg text-xs font-medium text-[#241f18] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-[60] shadow-xl dark:bg-[#1A1A1A] dark:border-white/10 dark:text-white">
+                        <div className="absolute left-16 px-3 py-1.5 bg-[#FFFFFF] border border-[#78716C] rounded-lg text-xs font-medium text-[#1A1612] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-[60] shadow-xl dark:bg-[#1A1A1A] dark:border-white/10 dark:text-white">
                             {themeLabel}
                         </div>
                     )}
@@ -181,9 +181,9 @@ export default function PMSidebar() {
 
                 <div className={cn(
                     "flex items-center rounded-xl transition-all duration-300",
-                    isExpanded ? "bg-[#241f18]/5 dark:bg-black/5 pr-4 p-1 gap-3 dark:bg-white/5" : "p-0 justify-center w-10 h-10"
+                    isExpanded ? "bg-[#1A1612]/5 dark:bg-black/5 pr-4 p-1 gap-3 dark:bg-white/5" : "p-0 justify-center w-10 h-10"
                 )}>
-                    <div className="w-8 h-8 rounded-full ring-2 ring-[#241f18]/10 dark:ring-white/10 shrink-0 overflow-hidden bg-[#241f18]">
+                    <div className="w-8 h-8 rounded-full ring-2 ring-[#1A1612]/10 dark:ring-white/10 shrink-0 overflow-hidden bg-[#1A1612]">
                         <img
                             src="https://api.dicebear.com/9.x/notionists/svg?seed=Adhiraj%20Dogra"
                             alt="Adhiraj"
@@ -194,8 +194,8 @@ export default function PMSidebar() {
                         "flex flex-col overflow-hidden transition-all duration-300",
                         isExpanded ? "opacity-100 max-w-[200px]" : "opacity-0 max-w-0"
                     )}>
-                        <span className="text-xs font-semibold text-[#241f18] whitespace-nowrap dark:text-white">Adhiraj</span>
-                        <span className="text-[10px] text-[#241f18]/45 whitespace-nowrap dark:text-white/40">PM</span>
+                        <span className="text-xs font-semibold text-[#1A1612] whitespace-nowrap dark:text-white">Adhiraj</span>
+                        <span className="text-[10px] text-[#1A1612]/45 whitespace-nowrap dark:text-white/40">PM</span>
                     </div>
                 </div>
             </div>

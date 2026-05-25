@@ -26,18 +26,18 @@ export function UpcomingInterviews({ selectedDate, className }: UpcomingIntervie
   const isDark = theme === "dark"
   const cardClass = isDark
     ? "border-[#242424] bg-[#101010] shadow-[0_18px_50px_rgba(0,0,0,0.28)]"
-    : "border-[#DED4C7] bg-[#FBF7EF] shadow-[0_18px_50px_rgba(42,37,32,0.06)]"
+    : "border-[#78716C] bg-[#FFFFFF] shadow-[0_18px_50px_rgba(26, 22, 18,0.06)]"
   const rowClass = isDark
     ? "border-[#242424] bg-[#171717] hover:bg-[#1C1C1C]"
-    : "border-[#DED4C7] bg-[#FFFDF8] hover:bg-[#EEE8DF]/70"
-  const titleClass = isDark ? "text-white" : "text-[#2A2520]"
-  const mutedClass = isDark ? "text-[#A0A0A0]" : "text-[#7A7168]"
-  const faintClass = isDark ? "text-[#777]" : "text-[#8A8177]"
+    : "border-[#78716C] bg-[#FFFFFF] hover:bg-[#FAF8F5]/70"
+  const titleClass = isDark ? "text-white" : "text-[#1A1612]"
+  const mutedClass = isDark ? "text-[#A0A0A0]" : "text-[#78716C]"
+  const faintClass = isDark ? "text-[#777]" : "text-[#78716C]"
   const stageClasses: Record<InterviewStage, string> = {
     Technical: "bg-[#00b4a0]/[0.12] text-[#00b4a0]",
     "Culture Fit": "bg-[#8b7fd4]/[0.12] text-[#8b7fd4]",
     "Final Round": "bg-[#f59340]/[0.12] text-[#f59340]",
-    "Intro Call": isDark ? "bg-white/[0.08] text-white/70" : "bg-[#0a0a0a]/[0.08] text-[#2A2520]",
+    "Intro Call": isDark ? "bg-white/[0.08] text-white/70" : "bg-[#0a0a0a]/[0.08] text-[#1A1612]",
   }
 
   const interviews = useMemo(() => {

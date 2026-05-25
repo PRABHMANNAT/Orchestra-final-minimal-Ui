@@ -42,7 +42,7 @@ export function MiniCalendar({ selectedDate, onSelectDate, className }: MiniCale
   }, [currentMonth])
 
   return (
-    <section className={cn("flex min-h-[300px] flex-col overflow-hidden rounded-[1.75rem] border border-[var(--pm-border)] bg-[var(--pm-card)] p-5 shadow-[0_18px_60px_rgba(36,31,24,0.08)] backdrop-blur-xl dark:shadow-none", className)}>
+    <section className={cn("flex min-h-[300px] flex-col overflow-hidden rounded-[1.75rem] border border-[var(--pm-border)] bg-[var(--pm-card)] p-5 shadow-[0_18px_60px_rgba(26, 22, 18,0.08)] backdrop-blur-xl dark:shadow-none", className)}>
       <div className="mb-5 flex items-center justify-between">
         <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.24em] text-[var(--pm-subtle)]">
           {format(currentMonth, "MMMM yyyy")}

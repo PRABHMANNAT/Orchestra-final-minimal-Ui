@@ -344,7 +344,7 @@ export default function InterviewsPage() {
   }
 
   return (
-    <main className="grid h-screen min-w-0 grid-cols-[420px_minmax(0,1fr)] overflow-hidden bg-[#F4EFE7] font-mono text-[#2A2520] dark:bg-[#050505] dark:text-white">
+    <main className="grid h-screen min-w-0 grid-cols-[420px_minmax(0,1fr)] overflow-hidden bg-[#FAF8F5] font-mono text-[#1A1612] dark:bg-[#050505] dark:text-white">
       <InterviewSherlockChat messages={messages} query={query} setQuery={setQuery} onSubmitQuery={handleSubmitQuery} onAction={handleAction} />
       <InterviewMainCanvas
         view={view}
@@ -372,14 +372,14 @@ function InterviewSherlockChat({
   onAction: (action: ChatAction, messageId: string) => void
 }) {
   return (
-    <section className="relative h-screen border-r border-[#DED4C7]/70 bg-[#F7F2EA] dark:border-white/[0.06] dark:bg-[#0A0A0A]">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#DED4C733_1px,transparent_1px),linear-gradient(to_bottom,#DED4C733_1px,transparent_1px)] bg-[size:32px_32px] opacity-25 dark:opacity-10" />
+    <section className="relative h-screen border-r border-[#78716C]/70 bg-[#FAF8F5] dark:border-white/[0.06] dark:bg-[#0A0A0A]">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#78716C33_1px,transparent_1px),linear-gradient(to_bottom,#78716C33_1px,transparent_1px)] bg-[size:32px_32px] opacity-25 dark:opacity-10" />
       <div className="relative flex h-full flex-col px-6 pb-28 pt-8">
         <div className="mb-6 flex items-center gap-4">
           <BrandOrbLoader />
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.34em] text-[#8A8177] dark:text-white/40">Socrates</p>
-            <p className="mt-1 text-[12px] font-bold tracking-[-0.03em] text-[#4E4944] dark:text-white/70">interview command live</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.34em] text-[#78716C] dark:text-white/40">Socrates</p>
+            <p className="mt-1 text-[12px] font-bold tracking-[-0.03em] text-[#1A1612] dark:text-white/70">interview command live</p>
           </div>
         </div>
 
@@ -396,16 +396,16 @@ function InterviewSherlockChat({
           }}
           className="absolute bottom-9 left-7 right-7"
         >
-          <div className="relative rounded-[22px] bg-[#FFFDF8]/95 p-2 shadow-[0_18px_45px_rgba(42,37,32,0.14)] backdrop-blur-xl dark:bg-[#141414] dark:shadow-none">
+          <div className="relative rounded-[22px] bg-[#FFFFFF]/95 p-2 shadow-[0_18px_45px_rgba(26, 22, 18,0.14)] backdrop-blur-xl dark:bg-[#141414] dark:shadow-none">
             <input
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Ask about interview prep"
-              className="h-[54px] w-full rounded-[17px] bg-transparent px-5 pr-14 text-[18px] tracking-[-0.06em] text-[#2A2520] outline-none placeholder:text-[#BDB6AE] dark:text-white dark:placeholder:text-white/30"
+              className="h-[54px] w-full rounded-[17px] bg-transparent px-5 pr-14 text-[18px] tracking-[-0.06em] text-[#1A1612] outline-none placeholder:text-[#78716C] dark:text-white dark:placeholder:text-white/30"
             />
             <button
               type="submit"
-              className="absolute right-4 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#F7F2EA] text-[#BDB6AE] transition hover:bg-[#FF6A00] hover:text-white dark:bg-white/10 dark:hover:bg-[#FF6A00]"
+              className="absolute right-4 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#FAF8F5] text-[#78716C] transition hover:bg-[#B8543D] hover:text-white dark:bg-white/10 dark:hover:bg-[#B8543D]"
               aria-label="Send interview message"
             >
               <ArrowUp size={18} />
@@ -425,8 +425,8 @@ function InterviewChatBubble({ message, onAction }: { message: ChatMessage; onAc
         <div
           className={
             isUser
-              ? "ml-auto max-w-full rounded-[24px] rounded-tr-md bg-[#2A2520] px-4 py-3 text-[12px] font-bold leading-5 tracking-[-0.03em] text-[#FFFDF8] dark:bg-white dark:text-[#2A2520]"
-              : "max-w-full rounded-[24px] rounded-tl-md border border-[#DED4C7] bg-[#FFFDF8]/95 px-4 py-3 text-[12px] font-bold leading-5 tracking-[-0.03em] text-[#6F675F] shadow-[0_8px_20px_rgba(42,37,32,0.08)] dark:border-white/10 dark:bg-[#141414] dark:text-white/70 dark:shadow-none"
+              ? "ml-auto max-w-full rounded-[24px] rounded-tr-md bg-[#1A1612] px-4 py-3 text-[12px] font-bold leading-5 tracking-[-0.03em] text-[#FFFFFF] dark:bg-white dark:text-[#1A1612]"
+              : "max-w-full rounded-[24px] rounded-tl-md border border-[#78716C] bg-[#FFFFFF]/95 px-4 py-3 text-[12px] font-bold leading-5 tracking-[-0.03em] text-[#78716C] shadow-[0_8px_20px_rgba(26, 22, 18,0.08)] dark:border-white/10 dark:bg-[#141414] dark:text-white/70 dark:shadow-none"
           }
         >
           {message.text}
@@ -437,7 +437,7 @@ function InterviewChatBubble({ message, onAction }: { message: ChatMessage; onAc
               <button
                 key={`${message.id}-${action.label}`}
                 onClick={() => onAction(action, message.id)}
-                className="rounded-full border border-[#DED4C7] bg-[#EEE8DF] px-3.5 py-2 text-[11px] font-black tracking-[-0.03em] text-[#6F675F] transition hover:border-[#FF6A00]/50 hover:bg-[#FFE1C7] hover:text-[#FF6A00] dark:border-white/10 dark:bg-white/5 dark:text-white/60 dark:hover:border-orange-500/40 dark:hover:bg-orange-500/10 dark:hover:text-orange-300"
+                className="rounded-full border border-[#78716C] bg-[#FAF8F5] px-3.5 py-2 text-[11px] font-black tracking-[-0.03em] text-[#78716C] transition hover:border-[#B8543D]/50 hover:bg-[#FAF8F5] hover:text-[#B8543D] dark:border-white/10 dark:bg-white/5 dark:text-white/60 dark:hover:border-orange-500/40 dark:hover:bg-orange-500/10 dark:hover:text-orange-300"
               >
                 {action.label}
               </button>
@@ -465,14 +465,14 @@ function InterviewMainCanvas({
   filter: "all" | "priority" | "technical"
 }) {
   return (
-    <section className="relative h-screen min-w-0 overflow-y-auto overflow-x-hidden bg-[#F7F2EA] px-8 py-9 dark:bg-[#0A0A0A]">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#DED4C733_1px,transparent_1px),linear-gradient(to_bottom,#DED4C733_1px,transparent_1px)] bg-[size:32px_32px] opacity-45 dark:opacity-10" />
+    <section className="relative h-screen min-w-0 overflow-y-auto overflow-x-hidden bg-[#FAF8F5] px-8 py-9 dark:bg-[#0A0A0A]">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#78716C33_1px,transparent_1px),linear-gradient(to_bottom,#78716C33_1px,transparent_1px)] bg-[size:32px_32px] opacity-45 dark:opacity-10" />
       {view === "list" && <SelectedInterviewList candidates={candidates} onOpenCandidate={onOpenCandidate} />}
       {view === "profile" && activeCandidate && (
         <div className="relative h-full min-w-0">
           <button
             onClick={onBackToList}
-            className="absolute left-8 top-7 z-10 inline-flex items-center gap-2 rounded-full border border-[#DED4C7] bg-[#FBF7EF]/90 px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] text-[#6F675F] shadow-[0_12px_35px_rgba(42,37,32,0.08)] transition hover:bg-[#FFE1C7] hover:text-[#FF6A00] dark:border-white/10 dark:bg-[#141414]/90 dark:text-white/60 dark:shadow-none dark:hover:bg-orange-500/10 dark:hover:text-orange-300"
+            className="absolute left-8 top-7 z-10 inline-flex items-center gap-2 rounded-full border border-[#78716C] bg-[#FFFFFF]/90 px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] text-[#78716C] shadow-[0_12px_35px_rgba(26, 22, 18,0.08)] transition hover:bg-[#FAF8F5] hover:text-[#B8543D] dark:border-white/10 dark:bg-[#141414]/90 dark:text-white/60 dark:shadow-none dark:hover:bg-orange-500/10 dark:hover:text-orange-300"
           >
             <ArrowLeft size={15} />
             List
@@ -496,8 +496,8 @@ function SelectedInterviewList({
       <div className="mx-auto min-w-0 max-w-[1180px]">
         <div className="min-w-0">
           <div className="min-w-0">
-            <p className="text-[12px] font-black uppercase tracking-[0.34em] text-[#8A8177] dark:text-white/40">Interview selected</p>
-            <h1 className="mt-3 max-w-[760px] text-[clamp(38px,4vw,54px)] font-black leading-none tracking-[-0.08em] text-[#2A2520] dark:text-white">Candidates ready for screen</h1>
+            <p className="text-[12px] font-black uppercase tracking-[0.34em] text-[#78716C] dark:text-white/40">Interview selected</p>
+            <h1 className="mt-3 max-w-[760px] text-[clamp(38px,4vw,54px)] font-black leading-none tracking-[-0.08em] text-[#1A1612] dark:text-white">Candidates ready for screen</h1>
           </div>
         </div>
 
@@ -516,7 +516,7 @@ function SelectedInterviewList({
 
 function SelectedCandidatesListHeader() {
   return (
-    <div className="grid grid-cols-[minmax(280px,1.6fr)_minmax(140px,0.8fr)_120px_100px_150px_100px_44px] border-y border-[#DED4C7] bg-[#EEE8DF]/35 px-7 py-3 text-[10px] font-black uppercase tracking-[0.24em] text-[#8A8177] dark:border-white/10 dark:bg-white/[0.03] dark:text-white/40">
+    <div className="grid grid-cols-[minmax(280px,1.6fr)_minmax(140px,0.8fr)_120px_100px_150px_100px_44px] border-y border-[#78716C] bg-[#FAF8F5]/35 px-7 py-3 text-[10px] font-black uppercase tracking-[0.24em] text-[#78716C] dark:border-white/10 dark:bg-white/[0.03] dark:text-white/40">
       <div>Candidate</div>
       <div className="text-center">Role</div>
       <div className="text-center">Confidence</div>
@@ -536,42 +536,42 @@ function SelectedCandidatesList({
   onOpenCandidate: (candidate: SelectedInterviewCandidate) => void
 }) {
   return (
-    <div className="overflow-hidden border-b border-[#DED4C7] bg-[#F7F2EA]/40 dark:border-white/10 dark:bg-transparent">
+    <div className="overflow-hidden border-b border-[#78716C] bg-[#FAF8F5]/40 dark:border-white/10 dark:bg-transparent">
       {candidates.map((candidate) => (
         <button
           key={candidate.id}
           onClick={() => onOpenCandidate(candidate)}
-          className="group grid w-full grid-cols-[minmax(280px,1.6fr)_minmax(140px,0.8fr)_120px_100px_150px_100px_44px] items-center border-b border-[#DED4C7] px-7 py-5 text-left transition hover:bg-[#FBF7EF] dark:border-white/10 dark:hover:bg-white/[0.04]"
+          className="group grid w-full grid-cols-[minmax(280px,1.6fr)_minmax(140px,0.8fr)_120px_100px_150px_100px_44px] items-center border-b border-[#78716C] px-7 py-5 text-left transition hover:bg-[#FFFFFF] dark:border-white/10 dark:hover:bg-white/[0.04]"
         >
           <div className="flex min-w-0 items-center gap-4">
             <img
               src={candidate.avatarUrl}
               alt={candidate.name}
-              className="h-14 w-14 shrink-0 rounded-full border border-[#DED4C7] bg-[#EEE8DF] object-cover dark:border-white/10 dark:bg-[#1C1C1C]"
+              className="h-14 w-14 shrink-0 rounded-full border border-[#78716C] bg-[#FAF8F5] object-cover dark:border-white/10 dark:bg-[#1C1C1C]"
             />
             <div className="min-w-0">
               <div className="flex min-w-0 items-center gap-3">
-                <p className="truncate text-[18px] font-black tracking-[-0.04em] text-[#2A2520] group-hover:text-[#00876A] dark:text-white dark:group-hover:text-emerald-300">{candidate.name}</p>
+                <p className="truncate text-[18px] font-black tracking-[-0.04em] text-[#1A1612] group-hover:text-[#00876A] dark:text-white dark:group-hover:text-emerald-300">{candidate.name}</p>
                 <CandidateListBadge candidate={candidate} />
               </div>
-              <p className="mt-1 truncate text-[13px] font-bold tracking-[-0.03em] text-[#8A8177] dark:text-white/40">{candidate.email}</p>
+              <p className="mt-1 truncate text-[13px] font-bold tracking-[-0.03em] text-[#78716C] dark:text-white/40">{candidate.email}</p>
               <RowLogoStack candidate={candidate} />
             </div>
           </div>
           <div className="text-center">
-            <p className="truncate text-[15px] font-black tracking-[-0.04em] text-[#6F675F] dark:text-white/60">{candidate.role}</p>
+            <p className="truncate text-[15px] font-black tracking-[-0.04em] text-[#78716C] dark:text-white/60">{candidate.role}</p>
           </div>
           <MetricBlock value={`${candidate.confidence}%`} label="Confidence" tone="green" />
           <MetricBlock value={String(candidate.evidenceCount)} label="Proofs" tone="blue" />
           <div className="text-center">
-            <p className="truncate text-[14px] font-black tracking-[-0.04em] text-[#6F675F] dark:text-white/60">{candidate.interviewType}</p>
-            <p className="mt-1 text-[9px] font-black uppercase tracking-[0.18em] text-[#8A8177] dark:text-white/40">Interview</p>
+            <p className="truncate text-[14px] font-black tracking-[-0.04em] text-[#78716C] dark:text-white/60">{candidate.interviewType}</p>
+            <p className="mt-1 text-[9px] font-black uppercase tracking-[0.18em] text-[#78716C] dark:text-white/40">Interview</p>
           </div>
           <RiskListBadge level={candidate.riskLevel} />
           <div className="flex justify-end">
             <ArrowUpRight
               size={20}
-              className="text-[#8A8177] transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#FF6A00] dark:text-white/40 dark:group-hover:text-orange-300"
+              className="text-[#78716C] transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#B8543D] dark:text-white/40 dark:group-hover:text-orange-300"
             />
           </div>
         </button>
@@ -588,11 +588,11 @@ function TopProofSources({ candidates }: { candidates: SelectedInterviewCandidat
   if (!sources.length) return null
 
   return (
-    <section className="mt-8 rounded-[30px] border border-[#DED4C7] bg-[#FBF7EF]/80 p-5 shadow-[0_18px_50px_rgba(42,37,32,0.06)] dark:border-white/10 dark:bg-[#101010]/90 dark:shadow-none">
+    <section className="mt-8 rounded-[30px] border border-[#78716C] bg-[#FFFFFF]/80 p-5 shadow-[0_18px_50px_rgba(26, 22, 18,0.06)] dark:border-white/10 dark:bg-[#101010]/90 dark:shadow-none">
       <div className="flex items-center justify-between gap-6">
         <div>
-          <p className="text-[11px] font-black uppercase tracking-[0.28em] text-[#8A8177] dark:text-white/40">Top proof sources</p>
-          <p className="mt-2 text-[13px] font-bold tracking-[-0.03em] text-[#6F675F] dark:text-white/55">
+          <p className="text-[11px] font-black uppercase tracking-[0.28em] text-[#78716C] dark:text-white/40">Top proof sources</p>
+          <p className="mt-2 text-[13px] font-bold tracking-[-0.03em] text-[#78716C] dark:text-white/55">
             Work, university, club, and open-source signals across selected candidates.
           </p>
         </div>
@@ -616,7 +616,7 @@ function RowLogoStack({ candidate }: { candidate: SelectedInterviewCandidate }) 
         <div
           key={item.id}
           title={item.name}
-          className="grid h-6 w-6 place-items-center rounded-full border border-[#DED4C7] bg-[#FBF7EF] text-[7px] font-black uppercase text-[#6F675F] dark:border-white/10 dark:bg-[#141414] dark:text-white/55"
+          className="grid h-6 w-6 place-items-center rounded-full border border-[#78716C] bg-[#FFFFFF] text-[7px] font-black uppercase text-[#78716C] dark:border-white/10 dark:bg-[#141414] dark:text-white/55"
         >
           {item.logoText}
         </div>
@@ -635,7 +635,7 @@ function CandidateListBadge({ candidate }: { candidate: SelectedInterviewCandida
         ? "border-[#D8CAFF] bg-[#EEE7FF] text-[#8B5CF6]"
         : label === "HIGH FIT"
           ? "border-[#C9D8FF] bg-[#E7EEFF] text-[#4077EE]"
-          : "border-[#FFC99D] bg-[#FFE1C7] text-[#FF6A00]"
+          : "border-[#FFC99D] bg-[#FAF8F5] text-[#B8543D]"
 
   return (
     <span className={`shrink-0 rounded-full border px-3 py-1 text-[11px] font-black uppercase tracking-[0.12em] ${cls}`}>{label}</span>
@@ -655,24 +655,24 @@ function MetricBlock({
     green: "text-[#18A86B]",
     blue: "text-[#4077EE]",
     purple: "text-[#8B5CF6]",
-    orange: "text-[#FF6A00]",
+    orange: "text-[#B8543D]",
   }
 
   return (
     <div className="text-center">
       <p className={`text-[19px] font-black leading-none tracking-[-0.05em] ${toneMap[tone]}`}>{value}</p>
-      <p className="mt-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#8A8177] dark:text-white/40">{label}</p>
+      <p className="mt-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#78716C] dark:text-white/40">{label}</p>
     </div>
   )
 }
 
 function RiskListBadge({ level }: { level: "Low" | "Medium" | "High" }) {
-  const cls = level === "Low" ? "text-[#18A86B]" : level === "Medium" ? "text-[#FF6A00]" : "text-[#E24740]"
+  const cls = level === "Low" ? "text-[#18A86B]" : level === "Medium" ? "text-[#B8543D]" : "text-[#E24740]"
 
   return (
     <div className="text-center">
       <p className={`text-[15px] font-black uppercase tracking-[-0.03em] ${cls}`}>{level}</p>
-      <p className="mt-1 text-[9px] font-black uppercase tracking-[0.18em] text-[#8A8177] dark:text-white/40">Risk</p>
+      <p className="mt-1 text-[9px] font-black uppercase tracking-[0.18em] text-[#78716C] dark:text-white/40">Risk</p>
     </div>
   )
 }

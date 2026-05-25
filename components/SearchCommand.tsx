@@ -31,7 +31,7 @@ export function SearchCommand({
     <motion.div
       layout
       className={cn(
-        "mx-auto w-full max-w-3xl rounded-[1.75rem] border border-[var(--pm-border)] bg-[var(--pm-card)] p-4 shadow-[0_18px_60px_rgba(36,31,24,0.08)]",
+        "mx-auto w-full max-w-3xl rounded-[1.75rem] border border-[var(--pm-border)] bg-[var(--pm-card)] p-4 shadow-[0_18px_60px_rgba(26, 22, 18,0.08)]",
         compact && "max-w-none",
       )}
     >

@@ -28,14 +28,14 @@ const tabs: { id: SettingsTab; label: string }[] = [
 ]
 
 const inputClass =
-  "rounded-full border border-[#DED4C7] bg-[#EEE8DF] px-4 py-2 text-[12px] font-black tracking-[-0.03em] text-[#2A2520] outline-none transition focus:border-[#FF6A00]/60 dark:border-white/10 dark:bg-white/5 dark:text-white"
+  "rounded-full border border-[#78716C] bg-[#FAF8F5] px-4 py-2 text-[12px] font-black tracking-[-0.03em] text-[#1A1612] outline-none transition focus:border-[#B8543D]/60 dark:border-white/10 dark:bg-white/5 dark:text-white"
 
 export function SettingsCanvas() {
   const [activeTab, setActiveTab] = useState<SettingsTab>("workspace")
 
   return (
-    <section className="relative h-screen overflow-y-auto overflow-x-hidden bg-[#F7F2EA] px-8 py-8 text-[#2A2520] dark:bg-[#0A0A0A] dark:text-white">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#DED4C733_1px,transparent_1px),linear-gradient(to_bottom,#DED4C733_1px,transparent_1px)] bg-[size:32px_32px] opacity-35 dark:opacity-10" />
+    <section className="relative h-screen overflow-y-auto overflow-x-hidden bg-[#FAF8F5] px-8 py-8 text-[#1A1612] dark:bg-[#0A0A0A] dark:text-white">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#78716C33_1px,transparent_1px),linear-gradient(to_bottom,#78716C33_1px,transparent_1px)] bg-[size:32px_32px] opacity-35 dark:opacity-10" />
       <div className="relative mx-auto max-w-[1180px] pb-24">
         <SettingsHeader />
         <div className="mt-8 grid grid-cols-1 gap-6 xl:grid-cols-[280px_1fr]">
@@ -51,13 +51,13 @@ function SettingsHeader() {
   return (
     <div className="flex flex-wrap items-end justify-between gap-6">
       <div>
-        <p className="text-[12px] font-black uppercase tracking-[0.32em] text-[#8A8177] dark:text-white/40">Workspace Settings</p>
-        <h1 className="mt-3 text-[56px] font-black leading-none tracking-[-0.09em] text-[#2A2520] dark:text-white">Settings</h1>
-        <p className="mt-4 max-w-[680px] text-[14px] font-bold leading-6 tracking-[-0.03em] text-[#6F675F] dark:text-white/55">
+        <p className="text-[12px] font-black uppercase tracking-[0.32em] text-[#78716C] dark:text-white/40">Workspace Settings</p>
+        <h1 className="mt-3 text-[56px] font-black leading-none tracking-[-0.09em] text-[#1A1612] dark:text-white">Settings</h1>
+        <p className="mt-4 max-w-[680px] text-[14px] font-bold leading-6 tracking-[-0.03em] text-[#78716C] dark:text-white/55">
           Configure your hiring workspace, AI assistants, interview defaults, integrations, and appearance.
         </p>
       </div>
-      <button className="rounded-[22px] bg-[#2A2520] px-6 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-[#FFFDF8] shadow-[0_16px_34px_rgba(42,37,32,0.16)] transition hover:scale-[1.01] dark:bg-white dark:text-[#0A0A0A] dark:shadow-none">
+      <button className="rounded-[22px] bg-[#1A1612] px-6 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-[#FFFFFF] shadow-[0_16px_34px_rgba(26, 22, 18,0.16)] transition hover:scale-[1.01] dark:bg-white dark:text-[#0A0A0A] dark:shadow-none">
         Save Changes
       </button>
     </div>
@@ -72,7 +72,7 @@ function SettingsNav({
   setActiveTab: (tab: SettingsTab) => void
 }) {
   return (
-    <aside className="h-fit rounded-[32px] border border-[#DED4C7] bg-[#FBF7EF]/88 p-3 shadow-[0_18px_50px_rgba(42,37,32,0.06)] dark:border-white/10 dark:bg-[#101010]/90 dark:shadow-none">
+    <aside className="h-fit rounded-[32px] border border-[#78716C] bg-[#FFFFFF]/88 p-3 shadow-[0_18px_50px_rgba(26, 22, 18,0.06)] dark:border-white/10 dark:bg-[#101010]/90 dark:shadow-none">
       {tabs.map((tab) => {
         const active = activeTab === tab.id
         return (
@@ -82,12 +82,12 @@ function SettingsNav({
             className={[
               "mb-1 flex w-full items-center justify-between rounded-[22px] px-4 py-3 text-left text-[12px] font-black uppercase tracking-[0.16em] transition last:mb-0",
               active
-                ? "bg-[#2A2520] text-[#FFFDF8] dark:bg-white dark:text-[#0A0A0A]"
-                : "text-[#7A7168] hover:bg-[#EEE8DF] dark:text-white/50 dark:hover:bg-white/5 dark:hover:text-white",
+                ? "bg-[#1A1612] text-[#FFFFFF] dark:bg-white dark:text-[#0A0A0A]"
+                : "text-[#78716C] hover:bg-[#FAF8F5] dark:text-white/50 dark:hover:bg-white/5 dark:hover:text-white",
             ].join(" ")}
           >
             {tab.label}
-            {active && <span className="h-2 w-2 rounded-full bg-[#FF6A00]" />}
+            {active && <span className="h-2 w-2 rounded-full bg-[#B8543D]" />}
           </button>
         )
       })}
@@ -126,10 +126,10 @@ function SettingsSection({
   children: React.ReactNode
 }) {
   return (
-    <section className="rounded-[34px] border border-[#DED4C7] bg-[#FBF7EF]/90 p-7 shadow-[0_18px_50px_rgba(42,37,32,0.06)] dark:border-white/10 dark:bg-[#101010]/90 dark:shadow-none">
+    <section className="rounded-[34px] border border-[#78716C] bg-[#FFFFFF]/90 p-7 shadow-[0_18px_50px_rgba(26, 22, 18,0.06)] dark:border-white/10 dark:bg-[#101010]/90 dark:shadow-none">
       <div className="mb-7">
-        <p className="text-[12px] font-black uppercase tracking-[0.3em] text-[#8A8177] dark:text-white/40">{title}</p>
-        <p className="mt-3 max-w-[720px] text-[14px] font-bold leading-6 tracking-[-0.03em] text-[#6F675F] dark:text-white/55">{description}</p>
+        <p className="text-[12px] font-black uppercase tracking-[0.3em] text-[#78716C] dark:text-white/40">{title}</p>
+        <p className="mt-3 max-w-[720px] text-[14px] font-bold leading-6 tracking-[-0.03em] text-[#78716C] dark:text-white/55">{description}</p>
       </div>
       <div className="space-y-4">{children}</div>
     </section>
@@ -146,11 +146,11 @@ function SettingRow({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-5 rounded-[24px] border border-[#DED4C7] bg-[#FFFDF8] px-5 py-4 dark:border-white/10 dark:bg-[#141414]">
+    <div className="flex flex-wrap items-center justify-between gap-5 rounded-[24px] border border-[#78716C] bg-[#FFFFFF] px-5 py-4 dark:border-white/10 dark:bg-[#141414]">
       <div className="min-w-0">
-        <p className="text-[15px] font-black tracking-[-0.04em] text-[#2A2520] dark:text-white">{label}</p>
+        <p className="text-[15px] font-black tracking-[-0.04em] text-[#1A1612] dark:text-white">{label}</p>
         {description && (
-          <p className="mt-1 max-w-[520px] text-[12px] font-bold leading-5 tracking-[-0.03em] text-[#8A8177] dark:text-white/45">{description}</p>
+          <p className="mt-1 max-w-[520px] text-[12px] font-bold leading-5 tracking-[-0.03em] text-[#78716C] dark:text-white/45">{description}</p>
         )}
       </div>
       <div className="shrink-0">{children}</div>
@@ -163,7 +163,7 @@ function Toggle({ enabled, setEnabled }: { enabled: boolean; setEnabled: (value:
     <button
       type="button"
       onClick={() => setEnabled(!enabled)}
-      className={["relative h-8 w-14 rounded-full transition", enabled ? "bg-[#18A86B]" : "bg-[#DED4C7] dark:bg-white/15"].join(" ")}
+      className={["relative h-8 w-14 rounded-full transition", enabled ? "bg-[#18A86B]" : "bg-[#78716C] dark:bg-white/15"].join(" ")}
       aria-pressed={enabled}
     >
       <span className={["absolute top-1 h-6 w-6 rounded-full bg-white shadow transition", enabled ? "left-7" : "left-1"].join(" ")} />
@@ -253,20 +253,20 @@ function AssistantCard({
   controls: React.ReactNode
 }) {
   return (
-    <div className="rounded-[28px] border border-[#DED4C7] bg-[#FFFDF8] p-5 dark:border-white/10 dark:bg-[#141414]">
+    <div className="rounded-[28px] border border-[#78716C] bg-[#FFFFFF] p-5 dark:border-white/10 dark:bg-[#141414]">
       <div className="flex flex-wrap items-start justify-between gap-5">
         <div className="flex min-w-0 items-start gap-4">
-          <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#FFE1C7] text-[#FF6A00] dark:bg-orange-500/10">
+          <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#FAF8F5] text-[#B8543D] dark:bg-orange-500/10">
             <Bot size={22} />
           </div>
           <div>
             <div className="flex flex-wrap items-center gap-3">
-              <h3 className="text-[24px] font-black tracking-[-0.07em] text-[#2A2520] dark:text-white">{name}</h3>
-              <span className="rounded-full bg-[#EEE8DF] px-3 py-1 text-[9px] font-black uppercase tracking-[0.18em] text-[#6F675F] dark:bg-white/5 dark:text-white/50">
+              <h3 className="text-[24px] font-black tracking-[-0.07em] text-[#1A1612] dark:text-white">{name}</h3>
+              <span className="rounded-full bg-[#FAF8F5] px-3 py-1 text-[9px] font-black uppercase tracking-[0.18em] text-[#78716C] dark:bg-white/5 dark:text-white/50">
                 {badge}
               </span>
             </div>
-            <p className="mt-2 max-w-[560px] text-[13px] font-bold leading-6 tracking-[-0.03em] text-[#6F675F] dark:text-white/55">{description}</p>
+            <p className="mt-2 max-w-[560px] text-[13px] font-bold leading-6 tracking-[-0.03em] text-[#78716C] dark:text-white/55">{description}</p>
           </div>
         </div>
         {controls}
@@ -306,7 +306,7 @@ function SherlockControls() {
 function InlineControl({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex items-center justify-between gap-3">
-      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8A8177] dark:text-white/40">{label}</p>
+      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#78716C] dark:text-white/40">{label}</p>
       {children}
     </div>
   )
@@ -379,17 +379,17 @@ function IntegrationsSettings() {
 function IntegrationRow({ name, status, icon: Icon }: { name: string; status: "Connected" | "Not connected"; icon: LucideIcon }) {
   const connected = status === "Connected"
   return (
-    <div className="flex items-center justify-between gap-5 rounded-[24px] border border-[#DED4C7] bg-[#FFFDF8] px-5 py-4 dark:border-white/10 dark:bg-[#141414]">
+    <div className="flex items-center justify-between gap-5 rounded-[24px] border border-[#78716C] bg-[#FFFFFF] px-5 py-4 dark:border-white/10 dark:bg-[#141414]">
       <div className="flex min-w-0 items-center gap-4">
-        <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#EEE8DF] text-[#2A2520] dark:bg-white/5 dark:text-white/70">
+        <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#FAF8F5] text-[#1A1612] dark:bg-white/5 dark:text-white/70">
           <Icon size={18} />
         </div>
         <div className="min-w-0">
-          <p className="truncate text-[15px] font-black text-[#2A2520] dark:text-white">{name}</p>
-          <p className={connected ? "text-[12px] font-black text-[#18A86B]" : "text-[12px] font-black text-[#8A8177] dark:text-white/40"}>{status}</p>
+          <p className="truncate text-[15px] font-black text-[#1A1612] dark:text-white">{name}</p>
+          <p className={connected ? "text-[12px] font-black text-[#18A86B]" : "text-[12px] font-black text-[#78716C] dark:text-white/40"}>{status}</p>
         </div>
       </div>
-      <button className="rounded-full bg-[#2A2520] px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white dark:bg-white dark:text-[#0A0A0A]">
+      <button className="rounded-full bg-[#1A1612] px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white dark:bg-white dark:text-[#0A0A0A]">
         {connected ? "Manage" : "Connect"}
       </button>
     </div>
@@ -453,12 +453,12 @@ function PrivacySettings() {
 
 function UsageCard({ icon: Icon, label, value }: { icon: LucideIcon; label: string; value: string }) {
   return (
-    <div className="rounded-[24px] border border-[#DED4C7] bg-[#FFFDF8] p-5 dark:border-white/10 dark:bg-[#141414]">
-      <div className="mb-5 grid h-10 w-10 place-items-center rounded-2xl bg-[#FFE1C7] text-[#FF6A00] dark:bg-orange-500/10">
+    <div className="rounded-[24px] border border-[#78716C] bg-[#FFFFFF] p-5 dark:border-white/10 dark:bg-[#141414]">
+      <div className="mb-5 grid h-10 w-10 place-items-center rounded-2xl bg-[#FAF8F5] text-[#B8543D] dark:bg-orange-500/10">
         <Icon size={18} />
       </div>
-      <p className="text-[24px] font-black tracking-[-0.07em] text-[#2A2520] dark:text-white">{value}</p>
-      <p className="mt-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#8A8177] dark:text-white/40">{label}</p>
+      <p className="text-[24px] font-black tracking-[-0.07em] text-[#1A1612] dark:text-white">{value}</p>
+      <p className="mt-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#78716C] dark:text-white/40">{label}</p>
     </div>
   )
 }
@@ -470,7 +470,7 @@ function DangerAwareButton({ icon: Icon, danger = false, children }: { icon: Luc
         "flex items-center justify-center gap-3 rounded-[22px] border px-5 py-4 text-[11px] font-black uppercase tracking-[0.22em] transition hover:scale-[1.01]",
         danger
           ? "border-[#FFC7C3] bg-[#FFE5E3]/70 text-[#E24740] dark:border-red-500/20 dark:bg-red-500/10"
-          : "border-[#DED4C7] bg-[#EEE8DF] text-[#2A2520] dark:border-white/10 dark:bg-white/5 dark:text-white/70",
+          : "border-[#78716C] bg-[#FAF8F5] text-[#1A1612] dark:border-white/10 dark:bg-white/5 dark:text-white/70",
       ].join(" ")}
     >
       <Icon size={15} />
@@ -481,7 +481,7 @@ function DangerAwareButton({ icon: Icon, danger = false, children }: { icon: Luc
 
 function Chip({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full bg-[#EEE8DF] px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-[#6F675F] dark:bg-white/5 dark:text-white/55">
+    <span className="rounded-full bg-[#FAF8F5] px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-[#78716C] dark:bg-white/5 dark:text-white/55">
       {children}
     </span>
   )

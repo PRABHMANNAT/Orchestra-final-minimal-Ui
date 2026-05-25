@@ -12,27 +12,27 @@ type Duration = 15 | 30 | 60
 
 function getPackTheme(isDark: boolean) {
   return {
-    page: isDark ? "bg-[#050505] text-white" : "bg-[#F7F2EA] text-[#2A2520]",
+    page: isDark ? "bg-[#050505] text-white" : "bg-[#FAF8F5] text-[#1A1612]",
     grid: isDark
       ? "bg-[linear-gradient(to_right,#1A1A1A_1px,transparent_1px),linear-gradient(to_bottom,#1A1A1A_1px,transparent_1px)] opacity-55"
-      : "bg-[linear-gradient(to_right,#DED4C733_1px,transparent_1px),linear-gradient(to_bottom,#DED4C733_1px,transparent_1px)] opacity-35",
+      : "bg-[linear-gradient(to_right,#78716C33_1px,transparent_1px),linear-gradient(to_bottom,#78716C33_1px,transparent_1px)] opacity-35",
     card: isDark
       ? "border-[#242424] bg-[#101010] shadow-[0_18px_50px_rgba(0,0,0,0.28)]"
-      : "border-[#DED4C7] bg-[#FBF7EF] shadow-[0_18px_50px_rgba(42,37,32,0.06)]",
+      : "border-[#78716C] bg-[#FFFFFF] shadow-[0_18px_50px_rgba(26, 22, 18,0.06)]",
     inner: isDark
       ? "border-[#242424] bg-[#171717]"
-      : "border-[#DED4C7] bg-[#FFFDF8]",
-    mutedBox: isDark ? "bg-[#1C1C1C]" : "bg-[#EEE8DF]/70",
-    text: isDark ? "text-white" : "text-[#2A2520]",
-    muted: isDark ? "text-[#A0A0A0]" : "text-[#7A7168]",
-    faint: isDark ? "text-[#777]" : "text-[#8A8177]",
-    border: isDark ? "border-[#242424]" : "border-[#DED4C7]",
+      : "border-[#78716C] bg-[#FFFFFF]",
+    mutedBox: isDark ? "bg-[#1C1C1C]" : "bg-[#FAF8F5]/70",
+    text: isDark ? "text-white" : "text-[#1A1612]",
+    muted: isDark ? "text-[#A0A0A0]" : "text-[#78716C]",
+    faint: isDark ? "text-[#777]" : "text-[#78716C]",
+    border: isDark ? "border-[#242424]" : "border-[#78716C]",
     buttonSecondary: isDark
       ? "border-[#242424] bg-[#171717] text-[#A0A0A0] hover:bg-[#222]"
-      : "border-[#DED4C7] bg-[#FBF7EF] text-[#7A7168] hover:bg-[#EEE8DF]",
+      : "border-[#78716C] bg-[#FFFFFF] text-[#78716C] hover:bg-[#FAF8F5]",
     selectedButton: isDark
-      ? "border-[#FF6A00] bg-[#3A1E0E] text-[#FF8C33]"
-      : "border-[#FF6A00] bg-[#FFE1C7] text-[#FF6A00]",
+      ? "border-[#B8543D] bg-[#1A1612] text-[#B8543D]"
+      : "border-[#B8543D] bg-[#FAF8F5] text-[#B8543D]",
   }
 }
 
@@ -147,7 +147,7 @@ export default function InterviewPackPage() {
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="relative mx-auto max-w-[1180px] pb-20">
         <button
           onClick={() => router.back()}
-          className={`inline-flex items-center gap-2 rounded-full border px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] shadow-[0_12px_35px_rgba(42,37,32,0.08)] transition ${packTheme.buttonSecondary}`}
+          className={`inline-flex items-center gap-2 rounded-full border px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] shadow-[0_12px_35px_rgba(26, 22, 18,0.08)] transition ${packTheme.buttonSecondary}`}
         >
           <ArrowLeft size={15} />
           Profile
@@ -193,7 +193,7 @@ export default function InterviewPackPage() {
                 "mt-5 inline-flex w-full items-center justify-center gap-2 rounded-[20px] border px-5 py-4 text-[11px] font-black uppercase tracking-[0.22em] transition hover:scale-[1.01]",
                 isDark
                   ? "border-[#333] bg-[#F5F5F5] text-[#111]"
-                  : "border-[#2A2520] bg-[#2A2520] text-[#FFFDF8] hover:border-[#FF6A00] hover:bg-[#FF6A00]",
+                  : "border-[#1A1612] bg-[#1A1612] text-[#FFFFFF] hover:border-[#B8543D] hover:bg-[#B8543D]",
               ].join(" ")}
             >
               {copied ? <CheckCircle2 size={16} /> : <Copy size={16} />}
@@ -208,7 +208,7 @@ export default function InterviewPackPage() {
               <article key={section.title} className={`rounded-[30px] border p-6 ${packTheme.card}`}>
                 <div className="flex items-start justify-between gap-5">
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#FF6A00]">{section.minutes} min</p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#B8543D]">{section.minutes} min</p>
                     <h2 className={`mt-2 text-[28px] font-black tracking-[-0.08em] ${packTheme.text}`}>{section.title}</h2>
                     <p className={`mt-3 text-[13px] font-bold leading-6 tracking-[-0.03em] ${packTheme.muted}`}>{section.focus}</p>
                   </div>
@@ -273,14 +273,14 @@ function PacketPanel({
     tone === "red"
       ? isDark
         ? "border-[#4A1F1C] bg-[#150908] shadow-[0_18px_50px_rgba(0,0,0,0.28)]"
-        : "border-[#FFC7C3] bg-[#FFF7F6] shadow-[0_14px_40px_rgba(42,37,32,0.06)]"
+        : "border-[#FFC7C3] bg-[#FFF7F6] shadow-[0_14px_40px_rgba(26, 22, 18,0.06)]"
       : packTheme.card
-  const iconClass = isDark ? "bg-[#3A1E0E] text-[#FF8C33]" : "bg-[#FFE1C7] text-[#FF6A00]"
+  const iconClass = isDark ? "bg-[#1A1612] text-[#B8543D]" : "bg-[#FAF8F5] text-[#B8543D]"
   const bodyClass =
     tone === "red"
       ? isDark
         ? "text-[#FF8A80] [&>p]:border-[#4A1F1C] [&>p]:bg-[#1C0D0B] [&>p]:text-[#FF8A80]"
-        : "text-[#7A4B47] [&>p]:border-[#FFC7C3] [&>p]:bg-[#FFFDF8] [&>p]:text-[#7A4B47]"
+        : "text-[#7A4B47] [&>p]:border-[#FFC7C3] [&>p]:bg-[#FFFFFF] [&>p]:text-[#7A4B47]"
       : packTheme.muted
 
   return (

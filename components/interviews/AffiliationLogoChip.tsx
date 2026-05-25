@@ -30,21 +30,21 @@ export function AffiliationLogoChip({
   compact?: boolean
 }) {
   const toneMap = {
-    orange: "bg-[#FFE1C7] text-[#FF6A00] border-[#FFC99D]",
+    orange: "bg-[#FAF8F5] text-[#B8543D] border-[#FFC99D]",
     blue: "bg-[#E7EEFF] text-[#4077EE] border-[#C9D8FF]",
     green: "bg-[#DDF8EB] text-[#18A86B] border-[#BFEBD2]",
     purple: "bg-[#EEE7FF] text-[#8B5CF6] border-[#D8CAFF]",
     red: "bg-[#FFE5E3] text-[#E24740] border-[#FFC7C3]",
-    neutral: "bg-[#EEE8DF] text-[#2A2520] border-[#DED4C7] dark:bg-[#242424] dark:text-white dark:border-white/10",
+    neutral: "bg-[#FAF8F5] text-[#1A1612] border-[#78716C] dark:bg-[#242424] dark:text-white dark:border-white/10",
   }
 
   return (
     <div
       className={[
-        "group flex items-center gap-3 rounded-full border bg-[#FBF7EF]/90 shadow-[0_8px_24px_rgba(42,37,32,0.05)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(42,37,32,0.09)] dark:border-white/10 dark:bg-[#141414]/90 dark:shadow-none",
+        "group flex items-center gap-3 rounded-full border bg-[#FFFFFF]/90 shadow-[0_8px_24px_rgba(26, 22, 18,0.05)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(26, 22, 18,0.09)] dark:border-white/10 dark:bg-[#141414]/90 dark:shadow-none",
         compact ? "px-2.5 py-2" : "px-3 py-2.5",
       ].join(" ")}
-      title={`${affiliation.name}${affiliation.role ? ` · ${affiliation.role}` : ""}`}
+      title={`${affiliation.name}${affiliation.role ? ` Â· ${affiliation.role}` : ""}`}
     >
       <div
         className={[
@@ -65,10 +65,10 @@ export function AffiliationLogoChip({
       </div>
       {!compact && (
         <div className="min-w-0">
-          <p className="max-w-[130px] truncate text-[12px] font-black tracking-[-0.04em] text-[#2A2520] dark:text-white">
+          <p className="max-w-[130px] truncate text-[12px] font-black tracking-[-0.04em] text-[#1A1612] dark:text-white">
             {affiliation.name}
           </p>
-          <p className="mt-0.5 max-w-[130px] truncate text-[9px] font-black uppercase tracking-[0.16em] text-[#8A8177] dark:text-white/40">
+          <p className="mt-0.5 max-w-[130px] truncate text-[9px] font-black uppercase tracking-[0.16em] text-[#78716C] dark:text-white/40">
             {affiliation.type}
           </p>
         </div>

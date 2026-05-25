@@ -16,7 +16,7 @@ import {
   GeneratedJobBriefCanvas,
 } from "@/components/job-brief/GeneratedJobBriefCanvas"
 
-// ─── Types ───────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Types â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 type JobBriefView = "intake" | "generating" | "brief"
 
@@ -44,7 +44,7 @@ type ChatMessage = {
   actions?: ChatAction[]
 }
 
-// ─── Flow constants ───────────────────────────────────────────────────────────
+// â”€â”€â”€ Flow constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 type BriefStep =
   | "role"
@@ -89,15 +89,15 @@ const STEP_ACTIONS: Partial<Record<BriefStep, ChatAction[]>> = {
     { label: "Series B+", value: "Series B+" },
   ],
   budget: [
-    { label: "$80k–$100k", value: "$80k–$100k" },
-    { label: "$100k–$130k", value: "$100k–$130k" },
-    { label: "$130k–$160k", value: "$130k–$160k" },
-    { label: "$160k–$200k", value: "$160k–$200k" },
+    { label: "$80kâ€“$100k", value: "$80kâ€“$100k" },
+    { label: "$100kâ€“$130k", value: "$100kâ€“$130k" },
+    { label: "$130kâ€“$160k", value: "$130kâ€“$160k" },
+    { label: "$160kâ€“$200k", value: "$160kâ€“$200k" },
     { label: "$200k+", value: "$200k+" },
   ],
   urgency: [
-    { label: "ASAP (2–4 weeks)", value: "ASAP (2–4 weeks)" },
-    { label: "1–2 months", value: "1–2 months" },
+    { label: "ASAP (2â€“4 weeks)", value: "ASAP (2â€“4 weeks)" },
+    { label: "1â€“2 months", value: "1â€“2 months" },
     { label: "Flexible", value: "Flexible" },
   ],
   workStyle: [
@@ -124,12 +124,12 @@ function uid() {
   return Math.random().toString(36).slice(2, 10)
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export default function JobBriefPage() {
   const router = useRouter()
 
-  // View state machine: intake → generating → brief
+  // View state machine: intake â†’ generating â†’ brief
   const [jobBriefView, setJobBriefView] = useState<JobBriefView>("intake")
   const [generatedBrief, setGeneratedBrief] = useState<GeneratedJobBrief | null>(null)
 
@@ -143,7 +143,7 @@ export default function JobBriefPage() {
     {
       id: "init",
       sender: "aristotle",
-      text: "Let's build a job brief. I'll ask a few quick questions — takes about 2 minutes. Then I'll generate a recruiter-ready brief, LinkedIn post, and candidate search query.",
+      text: "Let's build a job brief. I'll ask a few quick questions â€” takes about 2 minutes. Then I'll generate a recruiter-ready brief, LinkedIn post, and candidate search query.",
       actions: [{ label: "Let's start", value: "start" }],
     },
   ])
@@ -165,7 +165,7 @@ export default function JobBriefPage() {
     setMessages((prev) => [...prev, { ...msg, id: uid() }])
   }
 
-  // ── Generate brief ─────────────────────────────────────────────────────────
+  // â”€â”€ Generate brief â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   async function handleGenerateBrief() {
     setJobBriefView("generating")
@@ -208,7 +208,7 @@ export default function JobBriefPage() {
     router.push("/chat")
   }
 
-  // ── Intake step handlers ───────────────────────────────────────────────────
+  // â”€â”€ Intake step handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   function advanceStep(answer: string, field: BriefField | null, updatedBrief: JobBrief) {
     const currentIndex = STEP_ORDER.indexOf(currentStep)
@@ -307,22 +307,22 @@ export default function JobBriefPage() {
   const briefFields = Object.entries(brief).filter(([, v]) => v) as [BriefField, string][]
   const inputDisabled = currentStep === "done" || jobBriefView !== "intake"
 
-  // ── Render ─────────────────────────────────────────────────────────────────
+  // â”€â”€ Render â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   return (
     <main className="flex h-full min-w-0 flex-1 overflow-hidden">
       {/* Left: Aristotle chat */}
-      <aside className="relative flex h-full w-[400px] shrink-0 flex-col border-r border-[#DED4C7]/60 bg-[#F7F2EA] dark:border-white/[0.06] dark:bg-[#0A0A0A]">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#DED4C733_1px,transparent_1px),linear-gradient(to_bottom,#DED4C733_1px,transparent_1px)] bg-[size:32px_32px] opacity-30 dark:opacity-10" />
+      <aside className="relative flex h-full w-[400px] shrink-0 flex-col border-r border-[#78716C]/60 bg-[#FAF8F5] dark:border-white/[0.06] dark:bg-[#0A0A0A]">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#78716C33_1px,transparent_1px),linear-gradient(to_bottom,#78716C33_1px,transparent_1px)] bg-[size:32px_32px] opacity-30 dark:opacity-10" />
 
         {/* Header */}
-        <div className="relative flex items-center gap-3 border-b border-[#DED4C7]/60 px-5 py-4 dark:border-white/[0.06]">
+        <div className="relative flex items-center gap-3 border-b border-[#78716C]/60 px-5 py-4 dark:border-white/[0.06]">
           <AristotleOrb />
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.34em] text-[#8A8177] dark:text-white/40">
+            <p className="text-[10px] font-black uppercase tracking-[0.34em] text-[#78716C] dark:text-white/40">
               SOCRATES
             </p>
-            <p className="text-[12px] font-bold tracking-[-0.03em] text-[#4E4944] dark:text-white/70">
+            <p className="text-[12px] font-bold tracking-[-0.03em] text-[#1A1612] dark:text-white/70">
               job brief builder
             </p>
           </div>
@@ -339,7 +339,7 @@ export default function JobBriefPage() {
         </div>
 
         {/* Input */}
-        <div className="relative border-t border-[#DED4C7]/60 p-4 dark:border-white/[0.06]">
+        <div className="relative border-t border-[#78716C]/60 p-4 dark:border-white/[0.06]">
           <form
             onSubmit={(e) => {
               e.preventDefault()
@@ -347,7 +347,7 @@ export default function JobBriefPage() {
             }}
             className="relative"
           >
-            <div className="relative rounded-[18px] bg-[#FFFDF8]/95 shadow-[0_8px_28px_rgba(42,37,32,0.12)] dark:bg-[#141414] dark:shadow-none">
+            <div className="relative rounded-[18px] bg-[#FFFFFF]/95 shadow-[0_8px_28px_rgba(26, 22, 18,0.12)] dark:bg-[#141414] dark:shadow-none">
               <input
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
@@ -359,12 +359,12 @@ export default function JobBriefPage() {
                     : "Type to start..."
                 }
                 disabled={inputDisabled}
-                className="h-[52px] w-full rounded-[18px] bg-transparent px-5 pr-14 text-[14px] tracking-[-0.03em] text-[#2A2520] outline-none placeholder:text-[#BDB6AE] disabled:opacity-40 dark:text-white dark:placeholder:text-white/30"
+                className="h-[52px] w-full rounded-[18px] bg-transparent px-5 pr-14 text-[14px] tracking-[-0.03em] text-[#1A1612] outline-none placeholder:text-[#78716C] disabled:opacity-40 dark:text-white dark:placeholder:text-white/30"
               />
               <button
                 type="submit"
                 disabled={!inputValue.trim() || inputDisabled}
-                className="absolute right-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-[#F7F2EA] text-[#BDB6AE] transition hover:bg-[#FF6A00] hover:text-white disabled:pointer-events-none dark:bg-white/10 dark:hover:bg-[#FF6A00]"
+                className="absolute right-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-[#FAF8F5] text-[#78716C] transition hover:bg-[#B8543D] hover:text-white disabled:pointer-events-none dark:bg-white/10 dark:hover:bg-[#B8543D]"
                 aria-label="Send"
               >
                 <ArrowUp size={16} />
@@ -375,8 +375,8 @@ export default function JobBriefPage() {
       </aside>
 
       {/* Right: canvas (switches between intake cards / generating / brief) */}
-      <div className="relative flex h-full flex-1 flex-col overflow-hidden bg-[#F7F2EA] dark:bg-[#050505]">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(36,31,24,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(36,31,24,0.035)_1px,transparent_1px)] bg-[size:40px_40px] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] pointer-events-none" />
+      <div className="relative flex h-full flex-1 flex-col overflow-hidden bg-[#FAF8F5] dark:bg-[#050505]">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(26, 22, 18,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(26, 22, 18,0.035)_1px,transparent_1px)] bg-[size:40px_40px] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] pointer-events-none" />
 
         <AnimatePresence mode="wait">
           {jobBriefView === "intake" && (
@@ -390,16 +390,16 @@ export default function JobBriefPage() {
             >
               {briefFields.length === 0 ? (
                 <div className="flex h-full flex-col items-center justify-center gap-4">
-                  <FileText size={48} className="text-[#241f18]/20 dark:text-white/15" />
-                  <p className="text-sm text-[#241f18]/40 dark:text-white/25">
+                  <FileText size={48} className="text-[#1A1612]/20 dark:text-white/15" />
+                  <p className="text-sm text-[#1A1612]/40 dark:text-white/25">
                     Your job brief will appear here as you answer.
                   </p>
                 </div>
               ) : (
                 <div className="flex-1 overflow-y-auto p-8">
                   <div className="mx-auto max-w-lg">
-                    <p className="mb-6 text-[10px] font-black uppercase tracking-[0.32em] text-[#8A8177]">
-                      Job Brief — in progress
+                    <p className="mb-6 text-[10px] font-black uppercase tracking-[0.32em] text-[#78716C]">
+                      Job Brief â€” in progress
                     </p>
                     <div className="space-y-3">
                       <AnimatePresence>
@@ -408,12 +408,12 @@ export default function JobBriefPage() {
                             key={field}
                             initial={{ opacity: 0, y: 8 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="rounded-2xl border border-[#DED4C7]/70 bg-[#FFFDF8]/90 p-5 dark:border-white/[0.06] dark:bg-white/[0.03]"
+                            className="rounded-2xl border border-[#78716C]/70 bg-[#FFFFFF]/90 p-5 dark:border-white/[0.06] dark:bg-white/[0.03]"
                           >
-                            <p className="mb-1 text-[9px] font-black uppercase tracking-[0.26em] text-[#8A8177] dark:text-white/35">
+                            <p className="mb-1 text-[9px] font-black uppercase tracking-[0.26em] text-[#78716C] dark:text-white/35">
                               {FIELD_LABELS[field]}
                             </p>
-                            <p className="text-sm font-medium text-[#241f18] dark:text-white/80">
+                            <p className="text-sm font-medium text-[#1A1612] dark:text-white/80">
                               {value}
                             </p>
                           </motion.div>
@@ -425,7 +425,7 @@ export default function JobBriefPage() {
                           initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
                           onClick={() => void handleGenerateBrief()}
-                          className="mt-4 w-full rounded-[24px] bg-[#FF6A00] py-4 text-[11px] font-black uppercase tracking-[0.3em] text-white shadow-[0_14px_34px_rgba(255,106,0,0.22)] transition hover:scale-[1.01] hover:bg-[#E05E00]"
+                          className="mt-4 w-full rounded-[24px] bg-[#B8543D] py-4 text-[11px] font-black uppercase tracking-[0.3em] text-white shadow-[0_14px_34px_rgba(184, 84, 61,0.22)] transition hover:scale-[1.01] hover:bg-[#B8543D]"
                         >
                           Generate Job Brief
                         </motion.button>
@@ -472,7 +472,7 @@ export default function JobBriefPage() {
   )
 }
 
-// ─── Shared subcomponents ─────────────────────────────────────────────────────
+// â”€â”€â”€ Shared subcomponents â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function AristotleOrb() {
   return (
@@ -500,8 +500,8 @@ function ChatBubble({
         <div
           className={
             isUser
-              ? "rounded-[20px] rounded-tr-md bg-[#2A2520] px-4 py-3 text-[12px] font-bold leading-5 tracking-[-0.03em] text-[#FFFDF8] dark:bg-white dark:text-[#2A2520]"
-              : "rounded-[20px] rounded-tl-md border border-[#DED4C7] bg-[#FFFDF8]/95 px-4 py-3 text-[12px] font-bold leading-5 tracking-[-0.03em] text-[#6F675F] shadow-[0_4px_16px_rgba(42,37,32,0.07)] dark:border-white/10 dark:bg-[#141414] dark:text-white/70"
+              ? "rounded-[20px] rounded-tr-md bg-[#1A1612] px-4 py-3 text-[12px] font-bold leading-5 tracking-[-0.03em] text-[#FFFFFF] dark:bg-white dark:text-[#1A1612]"
+              : "rounded-[20px] rounded-tl-md border border-[#78716C] bg-[#FFFFFF]/95 px-4 py-3 text-[12px] font-bold leading-5 tracking-[-0.03em] text-[#78716C] shadow-[0_4px_16px_rgba(26, 22, 18,0.07)] dark:border-white/10 dark:bg-[#141414] dark:text-white/70"
           }
         >
           {message.text}
@@ -516,8 +516,8 @@ function ChatBubble({
                 className={cn(
                   "rounded-full border px-3 py-1.5 text-[11px] font-black tracking-[-0.02em] transition",
                   action.value === "generate-brief" || action.value === "use-to-search"
-                    ? "border-[#FF6A00]/60 bg-[#FF6A00] text-white shadow-[0_8px_24px_rgba(255,106,0,0.28)] hover:bg-[#E05E00]"
-                    : "border-[#DED4C7] bg-[#EEE8DF] text-[#6F675F] hover:border-[#FF6A00]/40 hover:bg-[#FFE1C7] hover:text-[#FF6A00] dark:border-white/10 dark:bg-white/5 dark:text-white/60 dark:hover:border-orange-500/40 dark:hover:bg-orange-500/10 dark:hover:text-orange-300"
+                    ? "border-[#B8543D]/60 bg-[#B8543D] text-white shadow-[0_8px_24px_rgba(184, 84, 61,0.28)] hover:bg-[#B8543D]"
+                    : "border-[#78716C] bg-[#FAF8F5] text-[#78716C] hover:border-[#B8543D]/40 hover:bg-[#FAF8F5] hover:text-[#B8543D] dark:border-white/10 dark:bg-white/5 dark:text-white/60 dark:hover:border-orange-500/40 dark:hover:bg-orange-500/10 dark:hover:text-orange-300"
                 )}
               >
                 {action.label}

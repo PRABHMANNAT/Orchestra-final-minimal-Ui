@@ -22,7 +22,7 @@ export default function GlobalWorkspaceShell({ children }: { children: React.Rea
   const isSherlockPage = pathname.startsWith("/analyse-profile") || pathname.startsWith("/interviews") || pathname.startsWith("/interview-pack") || pathname.startsWith("/chat") || pathname.startsWith("/job-brief") || pathname.startsWith("/pm") || pathname.startsWith("/settings")
 
   return (
-    <div className="chat-surface pm-command-surface h-screen min-w-0 overflow-hidden bg-[var(--chat-bg)] text-[var(--chat-text)] font-sans [--pm-chart-grid:rgba(36,31,24,0.10)] [--pm-chart-axis:rgba(36,31,24,0.58)] [--pm-chart-muted:rgba(36,31,24,0.42)] [--pm-chart-cursor:rgba(36,31,24,0.05)] [--pm-tooltip-bg:rgba(255,250,242,0.96)] [--pm-tooltip-border:#ded2c2] [--pm-tooltip-text:#241f18] dark:[--pm-chart-grid:rgba(255,255,255,0.06)] dark:[--pm-chart-axis:rgba(255,255,255,0.45)] dark:[--pm-chart-muted:rgba(255,255,255,0.28)] dark:[--pm-chart-cursor:rgba(255,255,255,0.05)] dark:[--pm-tooltip-bg:rgba(0,0,0,0.80)] dark:[--pm-tooltip-border:rgba(255,255,255,0.10)] dark:[--pm-tooltip-text:#ffffff]">
+    <div className="chat-surface pm-command-surface h-screen min-w-0 overflow-hidden bg-[var(--chat-bg)] text-[var(--chat-text)] font-sans [--pm-chart-grid:rgba(26, 22, 18,0.10)] [--pm-chart-axis:rgba(26, 22, 18,0.58)] [--pm-chart-muted:rgba(26, 22, 18,0.42)] [--pm-chart-cursor:rgba(26, 22, 18,0.05)] [--pm-tooltip-bg:rgba(255,250,242,0.96)] [--pm-tooltip-border:#78716C] [--pm-tooltip-text:#1A1612] dark:[--pm-chart-grid:rgba(255,255,255,0.06)] dark:[--pm-chart-axis:rgba(255,255,255,0.45)] dark:[--pm-chart-muted:rgba(255,255,255,0.28)] dark:[--pm-chart-cursor:rgba(255,255,255,0.05)] dark:[--pm-tooltip-bg:rgba(0,0,0,0.80)] dark:[--pm-tooltip-border:rgba(255,255,255,0.10)] dark:[--pm-tooltip-text:#ffffff]">
       <div className="flex h-full min-w-0 overflow-hidden">
         <PMSidebar />
         {!isSherlockPage && <AristotleSearchPanel />}
@@ -32,21 +32,21 @@ export default function GlobalWorkspaceShell({ children }: { children: React.Rea
       </div>
       <style jsx global>{`
         .chat-surface {
-          --chat-bg: #f7f3ec;
+          --chat-bg: #FAF8F5;
           --chat-panel: rgba(250, 247, 241, 0.78);
-          --chat-text: #241f18;
-          --chat-text-soft: rgba(36, 31, 24, 0.82);
-          --chat-muted: rgba(36, 31, 24, 0.54);
-          --chat-subtle: rgba(36, 31, 24, 0.34);
-          --chat-border: rgba(116, 96, 72, 0.2);
+          --chat-text: #1A1612;
+          --chat-text-soft: rgba(26, 22, 18, 0.82);
+          --chat-muted: rgba(26, 22, 18, 0.54);
+          --chat-subtle: rgba(26, 22, 18, 0.34);
+          --chat-border: rgba(120, 113, 108, 0.2);
           --chat-input: rgba(255, 252, 247, 0.94);
-          --chat-chip: rgba(36, 31, 24, 0.055);
+          --chat-chip: rgba(26, 22, 18, 0.055);
           --chat-chip-hover: rgba(226, 97, 18, 0.1);
-          --chat-placeholder: rgba(36, 31, 24, 0.34);
-          --chat-accent: #df5f12;
-          --chat-accent-hover: #c94f0b;
-          --chat-accent-glow: rgba(223, 95, 18, 0.28);
-          --chat-focus: rgba(223, 95, 18, 0.34);
+          --chat-placeholder: rgba(26, 22, 18, 0.34);
+          --chat-accent: #B8543D;
+          --chat-accent-hover: #B8543D;
+          --chat-accent-glow: rgba(184, 84, 61, 0.28);
+          --chat-focus: rgba(184, 84, 61, 0.34);
           --chat-loader: #1f2937;
         }
 
@@ -60,32 +60,32 @@ export default function GlobalWorkspaceShell({ children }: { children: React.Rea
           --chat-border: rgba(255, 255, 255, 0.06);
           --chat-input: #0a0a0a;
           --chat-chip: rgba(255, 255, 255, 0.05);
-          --chat-chip-hover: rgba(255, 107, 0, 0.1);
+          --chat-chip-hover: rgba(184, 84, 61, 0.1);
           --chat-placeholder: rgba(255, 255, 255, 0.2);
-          --chat-accent: #ff6b00;
-          --chat-accent-hover: #ff7f22;
-          --chat-accent-glow: rgba(255, 107, 0, 0.34);
-          --chat-focus: rgba(255, 107, 0, 0.4);
+          --chat-accent: #B8543D;
+          --chat-accent-hover: #B8543D;
+          --chat-accent-glow: rgba(184, 84, 61, 0.34);
+          --chat-focus: rgba(184, 84, 61, 0.4);
           --chat-loader: #ffffff;
         }
 
         .pm-command-surface {
-          --pm-bg: #f7f3ec;
+          --pm-bg: #FAF8F5;
           --pm-panel: rgba(250, 247, 241, 0.78);
           --pm-card: rgba(255, 250, 242, 0.94);
-          --pm-text: #241f18;
-          --pm-text-soft: rgba(36, 31, 24, 0.82);
-          --pm-muted: rgba(36, 31, 24, 0.58);
-          --pm-subtle: rgba(36, 31, 24, 0.38);
-          --pm-border: rgba(116, 96, 72, 0.2);
+          --pm-text: #1A1612;
+          --pm-text-soft: rgba(26, 22, 18, 0.82);
+          --pm-muted: rgba(26, 22, 18, 0.58);
+          --pm-subtle: rgba(26, 22, 18, 0.38);
+          --pm-border: rgba(120, 113, 108, 0.2);
           --pm-input: rgba(255, 252, 247, 0.94);
-          --pm-chip: rgba(36, 31, 24, 0.055);
+          --pm-chip: rgba(26, 22, 18, 0.055);
           --pm-chip-hover: rgba(226, 97, 18, 0.1);
-          --pm-placeholder: rgba(36, 31, 24, 0.34);
-          --pm-accent: #df5f12;
-          --pm-accent-hover: #c94f0b;
-          --pm-accent-glow: rgba(223, 95, 18, 0.28);
-          --pm-focus: rgba(223, 95, 18, 0.34);
+          --pm-placeholder: rgba(26, 22, 18, 0.34);
+          --pm-accent: #B8543D;
+          --pm-accent-hover: #B8543D;
+          --pm-accent-glow: rgba(184, 84, 61, 0.28);
+          --pm-focus: rgba(184, 84, 61, 0.34);
           --pm-loader: #1f2937;
           --pm-tooltip-bg: rgba(255, 250, 242, 0.96);
         }
@@ -101,12 +101,12 @@ export default function GlobalWorkspaceShell({ children }: { children: React.Rea
           --pm-border: rgba(255, 255, 255, 0.06);
           --pm-input: #0a0a0a;
           --pm-chip: rgba(255, 255, 255, 0.05);
-          --pm-chip-hover: rgba(255, 107, 0, 0.1);
+          --pm-chip-hover: rgba(184, 84, 61, 0.1);
           --pm-placeholder: rgba(255, 255, 255, 0.2);
-          --pm-accent: #ff6b00;
-          --pm-accent-hover: #ff7f22;
-          --pm-accent-glow: rgba(255, 107, 0, 0.34);
-          --pm-focus: rgba(255, 107, 0, 0.4);
+          --pm-accent: #B8543D;
+          --pm-accent-hover: #B8543D;
+          --pm-accent-glow: rgba(184, 84, 61, 0.34);
+          --pm-focus: rgba(184, 84, 61, 0.4);
           --pm-loader: #ffffff;
           --pm-tooltip-bg: rgba(0, 0, 0, 0.8);
         }

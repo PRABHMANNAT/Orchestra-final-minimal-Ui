@@ -39,9 +39,9 @@ export function SherlockOrb({ status }: { status: string }) {
       <motion.div
         animate={{ scale: status === "analysing" ? [1, 1.08, 1] : 1 }}
         transition={{ duration: 1.2, repeat: Infinity }}
-        className="grid h-12 w-12 place-items-center rounded-2xl bg-[#FBF7EF] text-[#1F2A38] shadow-[0_16px_48px_rgba(31,42,56,0.12)]"
+        className="grid h-12 w-12 place-items-center rounded-2xl bg-[#FFFFFF] text-[#1F2A38] shadow-[0_16px_48px_rgba(31,42,56,0.12)]"
       >
-        <span className="text-[20px] font-black tracking-[-0.08em]">Ⅱ</span>
+        <span className="text-[20px] font-black tracking-[-0.08em]">â…¡</span>
       </motion.div>
     </div>
   )

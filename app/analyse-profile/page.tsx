@@ -15,7 +15,7 @@ const SHERLOCK_REVEAL_EASE = [0.22, 1, 0.36, 1] as const
 const initialMessage: ChatMessage = {
   id: "m0",
   sender: "sherlock",
-  text: "Start with a candidate name. I’ll ask for role, GitHub, resume, and proof links.",
+  text: "Start with a candidate name. Iâ€™ll ask for role, GitHub, resume, and proof links.",
   actions: [
     { label: "Alex Rivera", value: "Alex Rivera", kind: "candidate" },
     { label: "Priya Mehta", value: "Priya Mehta", kind: "candidate" },
@@ -217,7 +217,7 @@ export default function AnalyseProfilePage() {
       attachment: {
         type: "resume",
         label: "Resume attached",
-        value: `${file.name} · ${Math.round(file.size / 1024)}KB`,
+        value: `${file.name} Â· ${Math.round(file.size / 1024)}KB`,
       },
     })
     setReadyToAnalyse()
@@ -232,7 +232,7 @@ export default function AnalyseProfilePage() {
     setFlowState("ready_to_analyse")
     setTimeout(() => {
       const name = context.candidateName || "Alex Rivera"
-      pushMessage({ sender: "sherlock", text: `I have enough context. Ready to build ${name}’s proof profile.` })
+      pushMessage({ sender: "sherlock", text: `I have enough context. Ready to build ${name}â€™s proof profile.` })
     }, 350)
   }
 
@@ -246,7 +246,7 @@ export default function AnalyseProfilePage() {
     setActiveProfile(buildProofProfile(candidate, context))
     setMainView("profile")
     setFlowState("profile_ready")
-    pushMessage({ sender: "sherlock", text: "Profile built. Ask me anything about Alex’s evidence, risks, or interview plan." })
+    pushMessage({ sender: "sherlock", text: "Profile built. Ask me anything about Alexâ€™s evidence, risks, or interview plan." })
   }
 
   function handleChatAction(action: ChatAction, messageId: string) {
@@ -285,7 +285,7 @@ export default function AnalyseProfilePage() {
   }
 
   return (
-    <main className="grid h-screen min-w-0 grid-cols-[420px_minmax(0,1fr)] overflow-hidden bg-[#F4EFE7] font-mono text-[#2A2520] dark:bg-[#050505] dark:text-white">
+    <main className="grid h-screen min-w-0 grid-cols-[420px_minmax(0,1fr)] overflow-hidden bg-[#FAF8F5] font-mono text-[#1A1612] dark:bg-[#050505] dark:text-white">
       <input
         id="resume-upload"
         type="file"
@@ -323,8 +323,8 @@ function SherlockMainCanvas({
   sherlockCycle: number
 }) {
   return (
-    <section className="relative h-screen overflow-hidden bg-[#F7F2EA] dark:bg-[#0A0A0A]">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#DED4C733_1px,transparent_1px),linear-gradient(to_bottom,#DED4C733_1px,transparent_1px)] bg-[size:32px_32px] opacity-45 dark:opacity-10" />
+    <section className="relative h-screen overflow-hidden bg-[#FAF8F5] dark:bg-[#0A0A0A]">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#78716C33_1px,transparent_1px),linear-gradient(to_bottom,#78716C33_1px,transparent_1px)] bg-[size:32px_32px] opacity-45 dark:opacity-10" />
       {view === "loading" && <SherlockLoading cycle={sherlockCycle} />}
       {view === "profile" && activeProfile && <CandidateProofProfile candidate={activeProfile} />}
     </section>
@@ -341,7 +341,7 @@ function SherlockLoading({ cycle }: { cycle: number }) {
             key={`sherlock-word-${cycle}`}
             aria-label={`Loading ${SHERLOCK_WORD}`}
             aria-live="polite"
-            className="flex min-w-[18ch] items-center justify-center gap-[0.12em] text-[58px] font-normal tracking-[0.42em] text-[#4E4944] dark:text-white/70"
+            className="flex min-w-[18ch] items-center justify-center gap-[0.12em] text-[58px] font-normal tracking-[0.42em] text-[#1A1612] dark:text-white/70"
             animate={{
               textShadow: [
                 "0 0 0 rgba(255,255,255,0)",
@@ -380,7 +380,7 @@ function SherlockLoading({ cycle }: { cycle: number }) {
               duration: SHERLOCK_WORD.length * SHERLOCK_REVEAL_DELAY + 0.32,
               ease: SHERLOCK_REVEAL_EASE,
             }}
-            className="h-px w-40 origin-left bg-[#FF6A00]/70 shadow-[0_0_20px_rgba(255,106,0,0.28)]"
+            className="h-px w-40 origin-left bg-[#B8543D]/70 shadow-[0_0_20px_rgba(184, 84, 61,0.28)]"
           />
         </div>
       </div>

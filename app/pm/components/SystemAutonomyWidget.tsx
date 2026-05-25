@@ -27,18 +27,18 @@ export default function SystemAutonomyWidget() {
             <div className="space-y-3 mb-4 relative z-10">
                 <div className="flex items-start gap-2">
                     <div className="w-0.5 h-full min-h-[24px] bg-gradient-to-b from-violet-500 to-fuchsia-500 rounded-full" />
-                    <div className="text-[10px] text-[#241f18]/60 dark:text-white/60 leading-tight">
-                        Auto-advanced <span className="text-[#241f18] dark:text-white font-medium">Sarah J.</span>
+                    <div className="text-[10px] text-[#1A1612]/60 dark:text-white/60 leading-tight">
+                        Auto-advanced <span className="text-[#1A1612] dark:text-white font-medium">Sarah J.</span>
                         <div className="text-violet-400/80 text-[9px] mt-0.5 flex items-center gap-1">
                             <Zap className="w-2 h-2" /> 98% Neural Match
                         </div>
                     </div>
                 </div>
                 <div className="flex items-start gap-2">
-                    <div className="w-0.5 h-full min-h-[24px] bg-[#241f18]/10 dark:bg-white/10 rounded-full" />
-                    <div className="text-[10px] text-[#241f18]/45 dark:text-white/40 leading-tight">
-                        Filtered <span className="text-[#241f18]/60 dark:text-white/60 font-medium">Candidate #892</span>
-                        <div className="text-[#241f18]/45 dark:text-white/30 text-[9px] mt-0.5">Visa Ineligible</div>
+                    <div className="w-0.5 h-full min-h-[24px] bg-[#1A1612]/10 dark:bg-white/10 rounded-full" />
+                    <div className="text-[10px] text-[#1A1612]/45 dark:text-white/40 leading-tight">
+                        Filtered <span className="text-[#1A1612]/60 dark:text-white/60 font-medium">Candidate #892</span>
+                        <div className="text-[#1A1612]/45 dark:text-white/30 text-[9px] mt-0.5">Visa Ineligible</div>
                     </div>
                 </div>
             </div>
