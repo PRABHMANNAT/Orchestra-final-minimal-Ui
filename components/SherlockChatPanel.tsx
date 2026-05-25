@@ -90,7 +90,7 @@ export function SherlockChatPanel({
           <div className="mb-5 flex items-center gap-3">
             <OmniLogo size={18} className="text-[#1F2A38] dark:text-white shrink-0" />
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.34em] text-[#8A8177] dark:text-white/40">SHERLOCK</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.34em] text-[#8A8177] dark:text-white/40">SOCRATES</p>
               <p className="text-[12px] font-bold tracking-[-0.03em] text-[#4E4944] dark:text-white/70">proof search live</p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export function SherlockChatPanel({
             {flowState === "ready_to_analyse" && <ContextReadyCard context={context} onAnalyse={onAnalyse} />}
             {flowState === "analysing" && (
               <div className="rounded-[24px] border border-[#DED4C7] bg-[#FFFDF8]/95 px-4 py-3 text-[12px] font-bold text-[#6F675F] shadow-[0_8px_20px_rgba(42,37,32,0.08)] dark:border-white/10 dark:bg-[#141414] dark:text-white/60">
-                Sherlock is stitching proof signals...
+                Socrates is stitching proof signals...
               </div>
             )}
           </div>
@@ -141,7 +141,7 @@ function SherlockFloatingInput({
         <button
           type="submit"
           className="absolute right-4 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-[#F7F2EA] text-[#BDB6AE] transition hover:bg-[#FF6A00] hover:text-white dark:bg-white/10 dark:hover:bg-[#FF6A00]"
-          aria-label="Send Sherlock message"
+          aria-label="Send Socrates message"
         >
           <ArrowUp size={18} />
         </button>

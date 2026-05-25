@@ -36,7 +36,7 @@ export function CenterStage({
           transition={{ delay: 0.08 }}
           className="mt-4 max-w-[520px] text-center text-[13px] font-bold leading-6 tracking-[-0.03em] text-[#8A8177]"
         >
-          Start with a name. Sherlock will collect the role, GitHub, resume, and proof links in the chat panel.
+          Start with a name. Socrates will collect the role, GitHub, resume, and proof links in the chat panel.
         </motion.p>
 
         <form
@@ -56,7 +56,7 @@ export function CenterStage({
             <button
               type="submit"
               className="absolute right-6 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-[#F4EFE7] text-[#8A8177] transition hover:bg-[#FF6A00] hover:text-white"
-              aria-label="Start Sherlock search"
+              aria-label="Start Socrates search"
             >
               <ArrowUp size={17} />
             </button>
@@ -69,7 +69,7 @@ export function CenterStage({
             animate={{ opacity: 1, y: 0 }}
             className="mt-8 rounded-full border border-[#DED4C7] bg-[#FBF7EF] px-5 py-3 text-[12px] font-bold uppercase tracking-[0.28em] text-[#8A8177]"
           >
-            Sherlock is stitching proof signals...
+            Socrates is stitching proof signals...
           </motion.div>
         )}
       </div>

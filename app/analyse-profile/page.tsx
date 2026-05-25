@@ -7,7 +7,7 @@ import { SherlockChatPanel, type ChatAction, type ChatMessage, type FlowState, t
 import { DEMO_CANDIDATES, type DemoCandidate } from "@/data/demoCandidates"
 
 type MainView = "loading" | "profile"
-const SHERLOCK_WORD = "Sherlock"
+const SHERLOCK_WORD = "Socrates"
 const SHERLOCK_REVEAL_DELAY = 0.12
 const SHERLOCK_REVEAL_DURATION = 0.88
 const SHERLOCK_REVEAL_EASE = [0.22, 1, 0.36, 1] as const
@@ -48,7 +48,7 @@ function buildProofProfile(candidate: DemoCandidate, context: SearchContext): De
             title: "Uploaded resume evidence",
             source: "Resume",
             date: "2026-05-05",
-            description: `${context.uploadedFile.name} was attached to the Sherlock context before analysis.`,
+            description: `${context.uploadedFile.name} was attached to the Socrates context before analysis.`,
           },
           ...candidate.evidence,
         ]

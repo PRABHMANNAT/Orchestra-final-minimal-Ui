@@ -34,7 +34,7 @@ export function JobBriefGeneratingState() {
         </h1>
         <div className="mx-auto mt-5 h-px w-[220px] bg-[#FF6A00]" />
         <p className="mx-auto mt-6 max-w-[460px] text-[13px] font-bold leading-6 tracking-[-0.03em] text-[#8A8177]">
-          Aristotle is turning your intake into a polished job description, LinkedIn-ready post, and candidate search query.
+          Socrates is turning your intake into a polished job description, LinkedIn-ready post, and candidate search query.
         </p>
       </motion.div>
     </div>

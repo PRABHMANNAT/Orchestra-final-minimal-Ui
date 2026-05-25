@@ -378,7 +378,7 @@ function InterviewSherlockChat({
         <div className="mb-6 flex items-center gap-4">
           <BrandOrbLoader />
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.34em] text-[#8A8177] dark:text-white/40">Sherlock</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.34em] text-[#8A8177] dark:text-white/40">Socrates</p>
             <p className="mt-1 text-[12px] font-bold tracking-[-0.03em] text-[#4E4944] dark:text-white/70">interview command live</p>
           </div>
         </div>

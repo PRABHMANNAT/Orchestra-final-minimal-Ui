@@ -119,7 +119,7 @@ export function createFallbackEnvelope(prompt: string): ArtifactEnvelope {
     narration: `I mapped "${topic}" into an operational view. The artifact highlights the fastest decisions, likely constraints, and next actions so you can continue from any block.`,
     artifact: {
       type: "infographic",
-      title: `Aristotle snapshot: ${topic}`,
+      title: `Socrates snapshot: ${topic}`,
       theme: "light",
       blocks: [
         { kind: "kpi", label: "Confidence", value: "82%", delta: "+8%", caption: "Initial synthesis" },

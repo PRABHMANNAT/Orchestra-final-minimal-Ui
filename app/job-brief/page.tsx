@@ -320,7 +320,7 @@ export default function JobBriefPage() {
           <AristotleOrb />
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.34em] text-[#8A8177] dark:text-white/40">
-              ARISTOTLE
+              SOCRATES
             </p>
             <p className="text-[12px] font-bold tracking-[-0.03em] text-[#4E4944] dark:text-white/70">
               job brief builder

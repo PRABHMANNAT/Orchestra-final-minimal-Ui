@@ -44,7 +44,7 @@ type InfographicArtifactProps = {
 }
 
 const CHART_COLORS = ["#df5f12", "#f59e0b", "#10b981", "#3b82f6", "#8b5cf6", "#ef4444"]
-const ARISTOTLE = "Aristotle"
+const ARISTOTLE = "Socrates"
 
 async function copyText(text: string) {
   await navigator.clipboard?.writeText(text)
@@ -143,7 +143,7 @@ function EmptyArtifact() {
         className="h-px w-40 origin-left bg-[var(--pm-accent)]/70 shadow-[0_0_20px_var(--pm-accent-glow)]"
       />
       <p className="max-w-sm text-sm leading-6 text-[var(--pm-muted)]">
-        Ask a Dashboard question and Aristotle will build an interactive infographic artifact here.
+        Ask a Dashboard question and Socrates will build an interactive infographic artifact here.
       </p>
     </div>
   )

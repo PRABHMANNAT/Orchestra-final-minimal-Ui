@@ -49,7 +49,7 @@ const durationPlans: Record<Duration, Array<{ title: string; minutes: string; fo
     {
       title: "Risk probe",
       minutes: "5-12",
-      focus: "Probe one concern from Sherlock's profile.",
+      focus: "Probe one concern from Socrates's profile.",
       questions: ["Where is the evidence weakest for this role?", "Tell me about a time you had to debug under unclear ownership."],
     },
     {

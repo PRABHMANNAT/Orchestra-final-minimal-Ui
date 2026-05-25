@@ -114,7 +114,7 @@ function SherlockRecommendationCard({
     <div className="mt-4 w-[360px] rounded-[28px] border border-[#DED4C7] bg-[#FBF7EF] p-5 shadow-[0_18px_50px_rgba(42,37,32,0.08)] dark:border-white/10 dark:bg-[#101010] dark:shadow-none">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#18A86B]">Sherlock recommends</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#18A86B]">Socrates recommends</p>
           <h3 className="mt-2 text-[30px] font-black leading-none tracking-[-0.08em] text-[#2A2520] dark:text-white">Select for interview</h3>
         </div>
 
@@ -434,7 +434,7 @@ function InsightsGrid({ candidate }: { candidate: DemoCandidate }) {
 
   return (
     <section className="mt-14">
-      <SectionLabel>Sherlock Insights</SectionLabel>
+      <SectionLabel>Socrates Insights</SectionLabel>
       <div className="mt-5 grid grid-cols-3 gap-5">
         {insights.map((item, index) => (
           <div key={item.title} className="rounded-[28px] border border-[#DED4C7] bg-[#FBF7EF] p-6 shadow-[0_12px_35px_rgba(42,37,32,0.05)] dark:border-white/10 dark:bg-[#101010] dark:shadow-none">

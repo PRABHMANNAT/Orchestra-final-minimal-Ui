@@ -203,7 +203,7 @@ function WorkspaceSettings() {
       <SettingRow label="Workspace name" description="Shown across dashboards and generated hiring briefs.">
         <TextInput defaultValue="Forge" />
       </SettingRow>
-      <SettingRow label="Company stage" description="Used by Aristotle to tune job briefs and candidate ranking.">
+      <SettingRow label="Company stage" description="Used by Socrates to tune job briefs and candidate ranking.">
         <SelectPill value={stage} options={["Idea", "Pre-seed", "Seed", "Series A"]} onChange={setStage} />
       </SettingRow>
       <SettingRow label="Current team size">
@@ -224,15 +224,15 @@ function WorkspaceSettings() {
 
 function AssistantsSettings() {
   return (
-    <SettingsSection title="Assistants" description="Configure Aristotle and Sherlock. No other assistant identities should appear in the product.">
+    <SettingsSection title="Assistants" description="Configure Socrates. No other assistant identities should appear in the product.">
       <AssistantCard
-        name="Aristotle"
+        name="Socrates"
         description="Job briefs, candidate discovery, interview workflow, and hiring dashboard intelligence."
         badge="Workflow AI"
         controls={<AristotleControls />}
       />
       <AssistantCard
-        name="Sherlock"
+        name="Socrates"
         description="Candidate proof analysis, profile investigation, GitHub evidence, and risk reasoning."
         badge="Proof AI"
         controls={<SherlockControls />}
@@ -247,7 +247,7 @@ function AssistantCard({
   badge,
   controls,
 }: {
-  name: "Aristotle" | "Sherlock"
+  name: "Socrates"
   description: string
   badge: string
   controls: React.ReactNode

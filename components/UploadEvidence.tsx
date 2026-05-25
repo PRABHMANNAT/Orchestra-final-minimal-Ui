@@ -33,7 +33,7 @@ export function UploadEvidence({
       type: file.type || "unknown",
       size: file.size,
       text: "",
-      preview: file.type === "application/pdf" ? "PDF uploaded. For demo, Sherlock will use file metadata unless extracted text is pasted." : "Extracting text...",
+      preview: file.type === "application/pdf" ? "PDF uploaded. For demo, Socrates will use file metadata unless extracted text is pasted." : "Extracting text...",
     }
 
     if (file.type.startsWith("text/") || file.name.endsWith(".md") || file.name.endsWith(".json")) {

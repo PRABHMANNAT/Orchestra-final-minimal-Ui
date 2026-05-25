@@ -49,7 +49,7 @@ export function useConversation() {
   const [messages, setMessages] = useState<PMConversationMessage[]>(() => loadMessages())
   const [input, setInput] = useState("")
   const [isThinking, setIsThinking] = useState(false)
-  const [provider, setProvider] = useState<ProviderState>({ name: "Aristotle", state: "idle" })
+  const [provider, setProvider] = useState<ProviderState>({ name: "Socrates", state: "idle" })
   const [activeArtifactId, setActiveArtifactId] = useState<string | null>(() => {
     const loaded = loadMessages().filter((message) => message.artifact)
     return loaded.at(-1)?.id || null
@@ -68,7 +68,7 @@ export function useConversation() {
     setMessages([])
     setInput("")
     setIsThinking(false)
-    setProvider({ name: "Aristotle", state: "idle" })
+    setProvider({ name: "Socrates", state: "idle" })
     setActiveArtifactId(null)
     localStorage.removeItem(STORAGE_KEY)
   }, [])
@@ -82,7 +82,7 @@ export function useConversation() {
     setMessages(baseMessages)
     setInput("")
     setIsThinking(true)
-    setProvider({ name: "Aristotle", state: "thinking" })
+    setProvider({ name: "Socrates", state: "thinking" })
 
     const controller = new AbortController()
     abortRef.current = controller
@@ -100,7 +100,7 @@ export function useConversation() {
       const reader = response.body.getReader()
       const decoder = new TextDecoder()
       let buffer = ""
-      let currentProvider = "Aristotle"
+      let currentProvider = "Socrates"
       let currentFallback = false
 
       const handleEvent = (chunk: string) => {
@@ -114,7 +114,7 @@ export function useConversation() {
           setProvider({ name: currentProvider, state: data.state === "thinking" ? "thinking" : "ready", fallback: currentFallback })
         }
         if (event === "provider") {
-          currentProvider = data.name || "Aristotle"
+          currentProvider = data.name || "Socrates"
           currentFallback = !!data.fallback
           setProvider({ name: currentProvider, state: "thinking", fallback: currentFallback })
         }
@@ -147,7 +147,7 @@ export function useConversation() {
       setProvider({ name: currentProvider, state: "ready", fallback: currentFallback })
     } catch (error) {
       if ((error as Error).name !== "AbortError") {
-        setProvider({ name: "Aristotle", state: "error" })
+        setProvider({ name: "Socrates", state: "error" })
         setMessages((prev) => [...prev, { id: uid("assistant"), role: "assistant", content: "I could not reach the Dashboard model layer. Check the server environment keys and try again.", createdAt: new Date().toISOString() }])
       }
     } finally {
