@@ -10,7 +10,6 @@ import { themeClasses } from "@/lib/theme"
 import {
     Brain,
     Users,
-    Settings,
     Search,
     Sun,
     Moon,
@@ -118,41 +117,6 @@ export default function PMSidebar() {
 
             {/* Bottom Actions */}
             <div className={cn("mt-auto flex flex-col gap-2 w-full", isExpanded ? "px-2" : "px-0 items-center")}>
-                <Link
-                    href="/settings"
-                    className={cn(
-                    "h-10 flex items-center transition-all duration-200 relative group w-full",
-                    isExpanded ? "justify-start px-2" : "justify-center",
-                    pathname.startsWith("/settings") && "text-[#B8543D]"
-                )}>
-                    {pathname.startsWith("/settings") && (
-                        <div className={cn(
-                            "absolute left-0 w-1 h-6 bg-[#B8543D] rounded-r-full shadow-[0_0_12px_rgba(184, 84, 61,0.6)] transition-all duration-300",
-                            isExpanded ? "-left-4" : "left-0"
-                        )} />
-                    )}
-                    <div className={cn(
-                        "relative flex items-center justify-center w-10 h-10 rounded-xl transition-all",
-                        pathname.startsWith("/settings")
-                            ? "text-[#B8543D]"
-                            : "text-[#1A1612]/45 group-hover:text-[#1A1612] group-hover:bg-[#1A1612]/5 dark:group-hover:bg-black/5 dark:text-white/40 dark:group-hover:text-white dark:group-hover:bg-white/5"
-                    )}>
-                        <Settings className="w-5 h-5" />
-                    </div>
-                    <span className={cn(
-                        "text-sm font-medium whitespace-nowrap overflow-hidden transition-all duration-300 ml-3",
-                        pathname.startsWith("/settings") ? "text-[#1A1612] dark:text-white" : "text-[#1A1612]/60 group-hover:text-[#1A1612] dark:text-white/60 dark:group-hover:text-white",
-                        isExpanded ? "opacity-100 w-auto" : "opacity-0 w-0 absolute"
-                    )}>
-                        Settings
-                    </span>
-                    {!isExpanded && (
-                        <div className="absolute left-16 px-3 py-1.5 bg-[#FFFFFF] border border-[#78716C] rounded-lg text-xs font-medium text-[#1A1612] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-[60] shadow-xl dark:bg-[#1A1A1A] dark:border-white/10 dark:text-white">
-                            Settings
-                        </div>
-                    )}
-                </Link>
-
                 <button
                     type="button"
                     aria-label={themeLabel}
