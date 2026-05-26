@@ -35,7 +35,7 @@ export default function PMSidebar() {
     const navItems = [
         { label: "Decide", icon: GitBranch, href: "/decide" },
         { label: "Ask", icon: Search, href: "/chat" },
-        { label: "Interviews", icon: Users, href: "/interviews" },
+        { label: "Status", icon: Users, href: "/status" },
         { label: "Know", icon: Brain, href: "/know" },
     ]
 

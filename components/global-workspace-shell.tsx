@@ -19,7 +19,7 @@ const SUGGESTIONS = [
 
 export default function GlobalWorkspaceShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  const isSherlockPage = pathname.startsWith("/interviews") || pathname.startsWith("/interview-pack") || pathname.startsWith("/chat") || pathname.startsWith("/pm") || pathname.startsWith("/know") || pathname.startsWith("/decide")
+  const isSherlockPage = pathname.startsWith("/status") || pathname.startsWith("/interview-pack") || pathname.startsWith("/chat") || pathname.startsWith("/pm") || pathname.startsWith("/know") || pathname.startsWith("/decide")
 
   return (
     <div className="chat-surface pm-command-surface h-screen min-w-0 overflow-hidden bg-[var(--chat-bg)] text-[var(--chat-text)] font-sans [--pm-chart-grid:rgba(26, 22, 18,0.10)] [--pm-chart-axis:rgba(26, 22, 18,0.58)] [--pm-chart-muted:rgba(26, 22, 18,0.42)] [--pm-chart-cursor:rgba(26, 22, 18,0.05)] [--pm-tooltip-bg:rgba(255,250,242,0.96)] [--pm-tooltip-border:#78716C] [--pm-tooltip-text:#1A1612] dark:[--pm-chart-grid:rgba(255,255,255,0.06)] dark:[--pm-chart-axis:rgba(255,255,255,0.45)] dark:[--pm-chart-muted:rgba(255,255,255,0.28)] dark:[--pm-chart-cursor:rgba(255,255,255,0.05)] dark:[--pm-tooltip-bg:rgba(0,0,0,0.80)] dark:[--pm-tooltip-border:rgba(255,255,255,0.10)] dark:[--pm-tooltip-text:#ffffff]">
