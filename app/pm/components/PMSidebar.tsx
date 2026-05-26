@@ -13,7 +13,8 @@ import {
     Search,
     Sun,
     Moon,
-    FileText,
+    GitBranch,
+    Gauge,
 } from "lucide-react"
 
 
@@ -33,10 +34,11 @@ export default function PMSidebar() {
     }, [])
 
     const navItems = [
-        { label: "Job Brief", icon: FileText, href: "/job-brief" },
+        { label: "Decide", icon: GitBranch, href: "/decide" },
         { label: "Ask", icon: Search, href: "/chat" },
         { label: "Analyse Profile", icon: Brain, href: "/analyse-profile" },
         { label: "Interviews", icon: Users, href: "/interviews" },
+        { label: "Know", icon: Gauge, href: "/know" },
     ]
 
     return (
@@ -58,7 +60,7 @@ export default function PMSidebar() {
                     "flex flex-col overflow-hidden transition-all duration-300",
                     isExpanded ? "opacity-100 max-w-[200px]" : "opacity-0 max-w-0"
                 )}>
-                    <span className="text-sm font-bold text-[#1A1612] tracking-wide whitespace-nowrap dark:text-white">iNGEN</span>
+                    <span className="text-sm font-bold text-[#1A1612] tracking-wide whitespace-nowrap dark:text-white">Orchestra</span>
                     <span className="text-[10px] text-[#1A1612]/45 font-medium tracking-wider uppercase whitespace-nowrap dark:text-white/40">Hiring Platform</span>
                 </div>
             </div>

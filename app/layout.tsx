@@ -34,7 +34,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Orchestra — Proof-first hiring",
   description: "Rank candidates with auditable evidence in under 60 seconds.",
-  generator: 'v0.app'
+  generator: 'v0.app',
+  icons: {
+    icon: '/orchestra-logo.svg',
+    apple: '/orchestra-logo.svg',
+  },
 }
 
 export default function RootLayout({

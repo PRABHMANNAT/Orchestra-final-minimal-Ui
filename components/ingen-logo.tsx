@@ -13,15 +13,15 @@ export function IngenLogo({ className, size = 40 }: IngenLogoProps) {
         <svg
             width={size}
             height={size}
-            viewBox="0 0 100 100"
+            viewBox="0 0 500 500"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className={cn(className)}
         >
-            <line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" strokeWidth="9" strokeLinecap="butt" />
-            <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" strokeWidth="9" strokeLinecap="butt" />
-            <line x1="22" y1="22" x2="78" y2="78" stroke="currentColor" strokeWidth="9" strokeLinecap="butt" />
-            <line x1="78" y1="22" x2="22" y2="78" stroke="currentColor" strokeWidth="9" strokeLinecap="butt" />
+            <circle cx="253" cy="233" r="108" stroke="currentColor" strokeWidth="36" />
+            <line x1="212" y1="68" x2="294" y2="430" stroke="currentColor" strokeWidth="36" strokeLinecap="square" />
+            <line x1="155" y1="68" x2="261" y2="68" stroke="currentColor" strokeWidth="36" strokeLinecap="square" />
+            <line x1="245" y1="430" x2="351" y2="430" stroke="currentColor" strokeWidth="36" strokeLinecap="square" />
         </svg>
     )
 }
