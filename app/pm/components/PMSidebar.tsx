@@ -33,8 +33,8 @@ export default function PMSidebar() {
     }, [])
 
     const navItems = [
-        { label: "Decide", icon: GitBranch, href: "/decide" },
         { label: "Ask", icon: Search, href: "/chat" },
+        { label: "Decide", icon: GitBranch, href: "/decide" },
         { label: "Status", icon: Users, href: "/status" },
         { label: "Know", icon: Brain, href: "/know" },
     ]
@@ -59,7 +59,7 @@ export default function PMSidebar() {
                     isExpanded ? "opacity-100 max-w-[200px]" : "opacity-0 max-w-0"
                 )}>
                     <span className="text-sm font-bold text-[#1A1612] tracking-wide whitespace-nowrap dark:text-white">Orchestra</span>
-                    <span className="text-[10px] text-[#1A1612]/45 font-medium tracking-wider uppercase whitespace-nowrap dark:text-white/40">Hiring Platform</span>
+                    <span className="text-[10px] text-[#1A1612]/45 font-medium tracking-wider uppercase whitespace-nowrap dark:text-white/40">Company Knowledge Base</span>
                 </div>
             </div>
 
