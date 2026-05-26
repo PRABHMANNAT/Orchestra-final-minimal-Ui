@@ -19,7 +19,7 @@ const SUGGESTIONS = [
 
 export default function GlobalWorkspaceShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  const isSherlockPage = pathname.startsWith("/analyse-profile") || pathname.startsWith("/interviews") || pathname.startsWith("/interview-pack") || pathname.startsWith("/chat") || pathname.startsWith("/pm") || pathname.startsWith("/know") || pathname.startsWith("/decide")
+  const isSherlockPage = pathname.startsWith("/interviews") || pathname.startsWith("/interview-pack") || pathname.startsWith("/chat") || pathname.startsWith("/pm") || pathname.startsWith("/know") || pathname.startsWith("/decide")
 
   return (
     <div className="chat-surface pm-command-surface h-screen min-w-0 overflow-hidden bg-[var(--chat-bg)] text-[var(--chat-text)] font-sans [--pm-chart-grid:rgba(26, 22, 18,0.10)] [--pm-chart-axis:rgba(26, 22, 18,0.58)] [--pm-chart-muted:rgba(26, 22, 18,0.42)] [--pm-chart-cursor:rgba(26, 22, 18,0.05)] [--pm-tooltip-bg:rgba(255,250,242,0.96)] [--pm-tooltip-border:#78716C] [--pm-tooltip-text:#1A1612] dark:[--pm-chart-grid:rgba(255,255,255,0.06)] dark:[--pm-chart-axis:rgba(255,255,255,0.45)] dark:[--pm-chart-muted:rgba(255,255,255,0.28)] dark:[--pm-chart-cursor:rgba(255,255,255,0.05)] dark:[--pm-tooltip-bg:rgba(0,0,0,0.80)] dark:[--pm-tooltip-border:rgba(255,255,255,0.10)] dark:[--pm-tooltip-text:#ffffff]">
@@ -142,9 +142,7 @@ export default function GlobalWorkspaceShell({ children }: { children: React.Rea
 
 function AristotleSearchPanel() {
   const router = useRouter()
-  const pathname = usePathname()
   const [query, setQuery] = useState("")
-  const isSherlockPage = pathname.startsWith("/analyse-profile")
 
   const submitSearch = (event?: React.FormEvent) => {
     event?.preventDefault()
@@ -152,7 +150,7 @@ function AristotleSearchPanel() {
     if (!submittedQuery) return
     localStorage.setItem("forge_global_search_query", submittedQuery)
     window.dispatchEvent(new CustomEvent("forge-global-search", { detail: { query: submittedQuery } }))
-    router.push(pathname.startsWith("/analyse-profile") ? "/analyse-profile" : "/chat")
+    router.push("/chat")
   }
 
   return (
@@ -171,20 +169,18 @@ function AristotleSearchPanel() {
         </div>
 
         <div className="mx-auto mt-auto w-full max-w-md space-y-4">
-          {!isSherlockPage && (
-            <div className="flex flex-wrap justify-center gap-3 opacity-0 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-forwards">
-              {SUGGESTIONS.map((tag) => (
-                <button
-                  key={tag}
-                  type="button"
-                  onClick={() => setQuery(tag)}
-                  className="px-3 py-1.5 rounded-full bg-[var(--chat-chip)] text-xs text-[var(--chat-muted)] hover:text-[var(--chat-text)] hover:bg-[var(--chat-chip-hover)] hover:ring-1 hover:ring-[var(--chat-focus)] transition-all"
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
-          )}
+          <div className="flex flex-wrap justify-center gap-3 opacity-0 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-forwards">
+            {SUGGESTIONS.map((tag) => (
+              <button
+                key={tag}
+                type="button"
+                onClick={() => setQuery(tag)}
+                className="px-3 py-1.5 rounded-full bg-[var(--chat-chip)] text-xs text-[var(--chat-muted)] hover:text-[var(--chat-text)] hover:bg-[var(--chat-chip-hover)] hover:ring-1 hover:ring-[var(--chat-focus)] transition-all"
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
 
           <form onSubmit={submitSearch} className="w-full relative group">
             <input

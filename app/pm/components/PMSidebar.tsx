@@ -14,7 +14,6 @@ import {
     Sun,
     Moon,
     GitBranch,
-    Gauge,
 } from "lucide-react"
 
 
@@ -36,9 +35,8 @@ export default function PMSidebar() {
     const navItems = [
         { label: "Decide", icon: GitBranch, href: "/decide" },
         { label: "Ask", icon: Search, href: "/chat" },
-        { label: "Analyse Profile", icon: Brain, href: "/analyse-profile" },
         { label: "Interviews", icon: Users, href: "/interviews" },
-        { label: "Know", icon: Gauge, href: "/know" },
+        { label: "Know", icon: Brain, href: "/know" },
     ]
 
     return (
