@@ -20,10 +20,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<AppTheme>("light")
 
   useEffect(() => {
-    const saved = localStorage.getItem("forge:theme") as AppTheme | null
-    const next = saved === "dark" || saved === "light" ? saved : "light"
-    setThemeState(next)
-    applyTheme(next)
+    const current = document.documentElement.classList.contains("dark") ? "dark" : "light"
+    setThemeState(current)
   }, [])
 
   function setTheme(next: AppTheme) {
