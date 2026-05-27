@@ -20,7 +20,8 @@ const SUGGESTIONS = [
 export default function GlobalWorkspaceShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const isLiveDocPage = pathname === "/decide" || pathname.startsWith("/projects/1/live-doc")
-  const isSherlockPage = pathname.startsWith("/status") || pathname.startsWith("/interview-pack") || pathname.startsWith("/chat") || pathname.startsWith("/pm") || pathname.startsWith("/know") || (pathname.startsWith("/decide") && !isLiveDocPage)
+  const isStatusPage = pathname === "/status" || pathname.startsWith("/status/")
+  const isSherlockPage = pathname.startsWith("/interview-pack") || pathname.startsWith("/chat") || pathname.startsWith("/pm") || pathname.startsWith("/know") || (pathname.startsWith("/decide") && !isLiveDocPage)
 
   return (
     <div className="chat-surface pm-command-surface h-screen min-w-0 overflow-hidden bg-[var(--chat-bg)] text-[var(--chat-text)] font-sans [--pm-chart-grid:rgba(26, 22, 18,0.10)] [--pm-chart-axis:rgba(26, 22, 18,0.58)] [--pm-chart-muted:rgba(26, 22, 18,0.42)] [--pm-chart-cursor:rgba(26, 22, 18,0.05)] [--pm-tooltip-bg:rgba(255,250,242,0.96)] [--pm-tooltip-border:#78716C] [--pm-tooltip-text:#1A1612] dark:[--pm-chart-grid:rgba(255,255,255,0.06)] dark:[--pm-chart-axis:rgba(255,255,255,0.45)] dark:[--pm-chart-muted:rgba(255,255,255,0.28)] dark:[--pm-chart-cursor:rgba(255,255,255,0.05)] dark:[--pm-tooltip-bg:rgba(0,0,0,0.80)] dark:[--pm-tooltip-border:rgba(255,255,255,0.10)] dark:[--pm-tooltip-text:#ffffff]">
@@ -148,31 +149,41 @@ function AristotleSearchPanel() {
   const [liveDocSuggestionIndex, setLiveDocSuggestionIndex] = useState(0)
   const [liveDocResponse, setLiveDocResponse] = useState("")
   const isLiveDocRoute = pathname === "/decide" || pathname.startsWith("/projects/1/live-doc")
-  const liveDocSuggestions = [
-    { label: "Agent context", exportKey: "agent" },
-    { label: "Backend", exportKey: "backend" },
-    { label: "Frontend", exportKey: "frontend" },
-    { label: "Payments relevant", exportKey: "payments" },
-    { label: "Diagram", exportKey: "diagram" },
-  ]
+  const isStatusRoute = pathname === "/status" || pathname.startsWith("/status/")
+  const isWorkspaceRoute = isLiveDocRoute || isStatusRoute
+  const liveDocSuggestions = isStatusRoute
+    ? [
+        { label: "Who owns this", exportKey: undefined as string | undefined },
+        { label: "What changed", exportKey: undefined },
+        { label: "Ask before they leave", exportKey: undefined },
+      ]
+    : [
+        { label: "Agent context", exportKey: "agent" as string | undefined },
+        { label: "Backend", exportKey: "backend" },
+        { label: "Frontend", exportKey: "frontend" },
+        { label: "Payments relevant", exportKey: "payments" },
+        { label: "Diagram", exportKey: "diagram" },
+      ]
 
   useEffect(() => {
-    if (!isLiveDocRoute) return
+    if (!isWorkspaceRoute) return
     setLiveDocSuggestionIndex(0)
     const timer = window.setInterval(() => {
       setLiveDocSuggestionIndex((index) => (index + 1) % liveDocSuggestions.length)
     }, 1600)
     return () => window.clearInterval(timer)
-  }, [isLiveDocRoute])
+  }, [isWorkspaceRoute])
 
   const submitSearch = (event?: React.FormEvent) => {
     event?.preventDefault()
     const submittedQuery = query.trim()
     if (!submittedQuery) return
-    if (isLiveDocRoute) {
+    if (isWorkspaceRoute) {
       const lower = submittedQuery.toLowerCase()
       window.dispatchEvent(new CustomEvent("live-doc-prompt", { detail: { prompt: submittedQuery } }))
-      if (lower.includes("diagram")) {
+      if (isStatusRoute) {
+        setLiveDocResponse("Focused the current Status section.")
+      } else if (lower.includes("diagram")) {
         window.dispatchEvent(new CustomEvent("live-doc-export", { detail: { exportKey: "diagram" } }))
         setLiveDocResponse("Opened Diagram export.")
       } else if (lower.includes("add") || lower.includes("edit") || lower.includes("write")) {
@@ -202,9 +213,9 @@ function AristotleSearchPanel() {
         <div className="mx-auto flex w-full max-w-md flex-1 flex-col items-center justify-center gap-6 py-8">
           <OmniLogo size={72} className="chat-pulse-logo text-[#1f2937] dark:text-white" />
           <h1 className="max-w-[16ch] text-center text-2xl font-light tracking-tight text-[var(--chat-text-soft)]">
-            {isLiveDocRoute ? "Ready." : "Who's the one you're searching for?"}
+            {isWorkspaceRoute ? "Ready." : "Who's the one you're searching for?"}
           </h1>
-          {isLiveDocRoute && (
+          {isWorkspaceRoute && (
             <p className="max-w-[24ch] text-center text-sm leading-6 text-[var(--chat-muted)]">
               Ask about this project, its documents, or generate a diagram.
             </p>
@@ -212,21 +223,21 @@ function AristotleSearchPanel() {
         </div>
 
         <div className="mx-auto mt-auto w-full max-w-md space-y-4">
-          {isLiveDocRoute && liveDocResponse && (
+          {isWorkspaceRoute && liveDocResponse && (
             <div className="mx-auto max-w-[26rem] rounded-2xl border border-[var(--chat-border)] bg-[var(--chat-chip)] px-4 py-3 text-center text-xs leading-5 text-[var(--chat-muted)]">
               {liveDocResponse}
             </div>
           )}
           <div className={cn(
             "flex flex-wrap justify-center gap-3",
-            isLiveDocRoute ? "opacity-100" : "opacity-0 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-forwards"
+            isWorkspaceRoute ? "opacity-100" : "opacity-0 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-forwards"
           )}>
-            {(isLiveDocRoute ? [liveDocSuggestions[liveDocSuggestionIndex].label] : SUGGESTIONS).map((tag) => (
+            {(isWorkspaceRoute ? [liveDocSuggestions[liveDocSuggestionIndex].label] : SUGGESTIONS).map((tag) => (
               <button
                 key={tag}
                 type="button"
                 onClick={() => {
-                  if (isLiveDocRoute) {
+                  if (isWorkspaceRoute) {
                     const item = liveDocSuggestions.find((suggestion) => suggestion.label === tag)
                     if (item) window.dispatchEvent(new CustomEvent("live-doc-export", { detail: { exportKey: item.exportKey } }))
                     return
@@ -235,7 +246,7 @@ function AristotleSearchPanel() {
                 }}
                 className={cn(
                   "px-3 py-1.5 rounded-full bg-[var(--chat-chip)] text-xs text-[var(--chat-muted)] hover:text-[var(--chat-text)] hover:bg-[var(--chat-chip-hover)] hover:ring-1 hover:ring-[var(--chat-focus)] transition-all",
-                  isLiveDocRoute && "animate-in fade-in slide-in-from-bottom-2 duration-300 border border-[var(--chat-border)] bg-[#fffaf4] text-[#B8543D]"
+                  isWorkspaceRoute && "animate-in fade-in slide-in-from-bottom-2 duration-300 border border-[var(--chat-border)] bg-[#fffaf4] text-[#B8543D]"
                 )}
               >
                 {tag}
@@ -247,7 +258,7 @@ function AristotleSearchPanel() {
             <input
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder={isLiveDocRoute ? "Ask Socrates..." : "Ex: Alex Rivera, github.com/alexrivera, Senior Rust Engineer"}
+              placeholder={isWorkspaceRoute ? "Ask Socrates..." : "Ex: Alex Rivera, github.com/alexrivera, Senior Rust Engineer"}
               className="w-full bg-[var(--chat-input)] rounded-2xl text-lg xl:text-xl font-light text-[var(--chat-text)] placeholder:text-[var(--chat-placeholder)] px-6 py-4 pr-16 focus:outline-none focus:ring-1 focus:ring-[var(--chat-focus)] transition-all shadow-xl"
               aria-label="Search prompt"
             />

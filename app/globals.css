@@ -4,43 +4,54 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Ultra premium black/white + sophisticated secondary colors */
-  /* Pure black & white foundation */
-  --background: oklch(0 0 0);
-  --foreground: oklch(1 0 0);
-  --card: oklch(0.06 0 0);
-  --card-foreground: oklch(1 0 0);
-  --popover: oklch(0.08 0 0);
-  --popover-foreground: oklch(1 0 0);
+  /* Orchestra context-layer tokens (drive /decide, /status, /projects/1/live-doc) */
+  --bg-canvas: #FAF8F5;
+  --surface: #FFFFFF;
+  --surface-raised: #FFFFFF;
+  --text-primary: #1A1612;
+  --text-muted: #78716C;
+  --text-muted-secondary: rgba(120, 113, 108, 0.6);
+  --border-subtle: rgba(26, 22, 18, 0.08);
+  --accent-rust: #B8543D;
+  --accent-rust-strong: #B8543D;
+  --accent-rust-soft: rgba(184, 84, 61, 0.1);
+  --accent-on-rust: #FFFFFF;
+  --highlight: #fff9c4;
+  --highlight-hover: #fff3a0;
+  --tooltip-bg: #1A1612;
+  --tooltip-text: #FFFFFF;
+  --graph-muted: rgba(26, 22, 18, 0.42);
 
-  /* Primary = Pure White */
-  --primary: oklch(1 0 0);
-  --primary-foreground: oklch(0 0 0);
+  --background: var(--bg-canvas);
+  --foreground: var(--text-primary);
+  --card: var(--surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-raised);
+  --popover-foreground: var(--text-primary);
 
-  /* Sophisticated secondary colors */
-  --secondary: oklch(0.12 0 0);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.2 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(0.9 0 0);
-  --accent-foreground: oklch(0.08 0 0);
+  --primary: var(--accent-rust);
+  --primary-foreground: var(--accent-on-rust);
 
-  /* Refined secondary palette */
+  --secondary: var(--surface);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--surface);
+  --muted-foreground: var(--text-muted);
+  --accent: var(--accent-rust-soft);
+  --accent-foreground: var(--accent-rust);
+
   --slate-blue: oklch(0.55 0.08 250);
   --amber-gold: oklch(0.7 0.12 75);
   --cool-gray: oklch(0.35 0.01 250);
 
-  /* Status colors remain */
   --success: oklch(0.6 0.15 155);
   --warning: oklch(0.7 0.13 70);
   --destructive: oklch(0.6 0.18 25);
   --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.14 0 0);
-  --input: oklch(0.12 0 0);
-  --ring: oklch(1 0 0);
-  --surface: oklch(0.08 0 0);
-  --surface-elevated: oklch(0.12 0 0);
+  --border: var(--border-subtle);
+  --input: var(--border-subtle);
+  --ring: var(--accent-rust);
+  --surface-elevated: var(--surface-raised);
 
   --chart-1: oklch(1 0 0);
   --chart-2: var(--slate-blue);
@@ -48,34 +59,51 @@
   --chart-4: var(--cool-gray);
   --chart-5: oklch(0.5 0 0);
 
-  /* Increased border radius for more roundness */
   --radius: 1.25rem;
 
-  --sidebar: oklch(0.04 0 0);
-  --sidebar-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(1 0 0);
-  --sidebar-primary-foreground: oklch(0 0 0);
-  --sidebar-accent: oklch(0.12 0 0);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.16 0 0);
-  --sidebar-ring: oklch(1 0 0);
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent-rust);
+  --sidebar-primary-foreground: var(--accent-on-rust);
+  --sidebar-accent: var(--accent-rust-soft);
+  --sidebar-accent-foreground: var(--accent-rust);
+  --sidebar-border: var(--border-subtle);
+  --sidebar-ring: var(--accent-rust);
 }
 
 .dark {
-  --background: oklch(0 0 0);
-  --foreground: oklch(1 0 0);
-  --card: oklch(0.06 0 0);
-  --card-foreground: oklch(1 0 0);
-  --popover: oklch(0.08 0 0);
-  --popover-foreground: oklch(1 0 0);
-  --primary: oklch(1 0 0);
-  --primary-foreground: oklch(0 0 0);
-  --secondary: oklch(0.12 0 0);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.2 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(0.9 0 0);
-  --accent-foreground: oklch(0.08 0 0);
+  color-scheme: dark;
+  --bg-canvas: #1A1612;
+  --surface: #221E19;
+  --surface-raised: #2A2520;
+  --text-primary: #F5F1EC;
+  --text-muted: #A8A099;
+  --text-muted-secondary: rgba(168, 160, 153, 0.68);
+  --border-subtle: rgba(245, 241, 236, 0.10);
+  --accent-rust: #CF6A4F;
+  --accent-rust-strong: #C25B40;
+  --accent-rust-soft: rgba(207, 106, 79, 0.16);
+  --accent-on-rust: #FFFFFF;
+  --highlight: rgba(207, 154, 74, 0.16);
+  --highlight-hover: rgba(207, 154, 74, 0.26);
+  --tooltip-bg: #2A2520;
+  --tooltip-text: #F5F1EC;
+  --graph-muted: rgba(245, 241, 236, 0.42);
+
+  --background: var(--bg-canvas);
+  --foreground: var(--text-primary);
+  --card: var(--surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-raised);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent-rust);
+  --primary-foreground: var(--accent-on-rust);
+  --secondary: var(--surface);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--surface);
+  --muted-foreground: var(--text-muted);
+  --accent: var(--accent-rust-soft);
+  --accent-foreground: var(--accent-rust);
   --slate-blue: oklch(0.55 0.08 250);
   --amber-gold: oklch(0.7 0.12 75);
   --cool-gray: oklch(0.35 0.01 250);
@@ -83,24 +111,23 @@
   --warning: oklch(0.7 0.13 70);
   --destructive: oklch(0.6 0.18 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.14 0 0);
-  --input: oklch(0.12 0 0);
-  --ring: oklch(1 0 0);
-  --surface: oklch(0.08 0 0);
-  --surface-elevated: oklch(0.12 0 0);
+  --border: var(--border-subtle);
+  --input: var(--border-subtle);
+  --ring: var(--accent-rust);
+  --surface-elevated: var(--surface-raised);
   --chart-1: oklch(1 0 0);
   --chart-2: var(--slate-blue);
   --chart-3: var(--amber-gold);
   --chart-4: var(--cool-gray);
   --chart-5: oklch(0.5 0 0);
-  --sidebar: oklch(0.04 0 0);
-  --sidebar-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(1 0 0);
-  --sidebar-primary-foreground: oklch(0 0 0);
-  --sidebar-accent: oklch(0.12 0 0);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.16 0 0);
-  --sidebar-ring: oklch(1 0 0);
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent-rust);
+  --sidebar-primary-foreground: var(--accent-on-rust);
+  --sidebar-accent: var(--accent-rust-soft);
+  --sidebar-accent-foreground: var(--accent-rust);
+  --sidebar-border: var(--border-subtle);
+  --sidebar-ring: var(--accent-rust);
 }
 
 @theme inline {
