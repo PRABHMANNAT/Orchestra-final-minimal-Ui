@@ -84,8 +84,9 @@
   --accent-rust-strong: #C25B40;
   --accent-rust-soft: rgba(207, 106, 79, 0.16);
   --accent-on-rust: #FFFFFF;
-  --highlight: rgba(207, 154, 74, 0.16);
-  --highlight-hover: rgba(207, 154, 74, 0.26);
+  --highlight: rgba(255, 207, 102, 0.32);
+  --highlight-hover: rgba(255, 207, 102, 0.48);
+
   --tooltip-bg: #2A2520;
   --tooltip-text: #F5F1EC;
   --graph-muted: rgba(245, 241, 236, 0.42);

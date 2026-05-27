@@ -114,7 +114,7 @@ export function DecideWorkspace() {
   return (
     <div className="h-full w-full overflow-hidden bg-[var(--bg-canvas)] text-[var(--text-primary)]" onClick={() => setTooltip(null)} style={{ fontFamily: "var(--font-inter), ui-sans-serif, system-ui" }}>
       <main className={`flex h-full min-w-0 flex-col transition-[margin] duration-300 ${sourceRail ? "mr-[340px]" : "mr-0"}`}>
-        <TopBar section={section} setSection={setSection} mode={mode} setMode={setMode} onPrMerge={triggerPrMerge} onContradiction={() => setReview("contradiction")} />
+        <TopBar section={section} setSection={setSection} mode={mode} setMode={setMode} onPrMerge={triggerPrMerge} />
         <div className="min-h-0 flex-1 overflow-y-auto">
           {activeExport && section === "Doc" ? (
             <ExportCanvas exportKey={activeExport} sections={sections} copied={copied} setCopied={setCopied} onClose={() => setActiveExport(null)} />
@@ -154,15 +154,13 @@ export function SectionSwitch<T extends string>({ value, options, onChange }: { 
   )
 }
 
-function TopBar({ section, setSection, mode, setMode, onPrMerge, onContradiction }: { section: DecideSection; setSection: (section: DecideSection) => void; mode: Mode; setMode: (mode: Mode) => void; onPrMerge: () => void; onContradiction: () => void }) {
+function TopBar({ section, setSection, mode, setMode, onPrMerge }: { section: DecideSection; setSection: (section: DecideSection) => void; mode: Mode; setMode: (mode: Mode) => void; onPrMerge: () => void }) {
   return (
     <header className="flex h-12 shrink-0 items-center justify-between gap-4 border-b-[1.5px] border-[var(--border-subtle)] bg-[var(--bg-canvas)] px-6">
       <div className="whitespace-nowrap text-[13px] font-medium">Northstar Cloud · Context</div>
       <div className="flex min-w-0 items-center gap-3">
         <SectionSwitch value={section} options={["Doc", "Flowchart", "History"]} onChange={setSection} />
         <button onClick={onPrMerge} className="hidden rounded-full border border-[var(--border-subtle)] bg-[var(--surface)] px-3 py-1.5 font-mono text-[10px] text-[var(--text-muted)] hover:text-[var(--accent-rust)] lg:block">PR #418 merged</button>
-        <button onClick={onContradiction} className="hidden rounded-full border border-[var(--border-subtle)] bg-[var(--surface)] px-3 py-1.5 font-mono text-[10px] text-[var(--text-muted)] hover:text-[var(--accent-rust)] lg:block">contradiction event</button>
-        <div className="hidden text-[12px] text-[var(--text-muted)] xl:block">Contradictions always require confirm, even in Auto.</div>
         <SectionSwitch value={mode} options={["Auto", "Confirm"]} onChange={setMode} />
       </div>
     </header>
