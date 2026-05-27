@@ -73,7 +73,7 @@
 
 .dark {
   color-scheme: dark;
-  --bg-canvas: #1A1612;
+  --bg-canvas: #000;
   --surface: #221E19;
   --surface-raised: #2A2520;
   --text-primary: #F5F1EC;

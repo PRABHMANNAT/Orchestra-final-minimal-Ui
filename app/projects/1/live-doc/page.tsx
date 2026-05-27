@@ -135,7 +135,7 @@ export function DecideWorkspace() {
       </main>
 
       {sourceRail && <SourceRail ids={sourceRail} onClose={() => setSourceRail(null)} />}
-      {tooltip && <div className="fixed z-[80] -translate-x-1/2 rounded-md bg-[var(--text-primary)] px-2.5 py-1.5 font-mono text-[10px] text-[var(--accent-on-rust)]" style={{ left: tooltip.x, top: tooltip.y - 38 }}>{tooltip.text}</div>}
+      {tooltip && <div className="fixed z-[80] -translate-x-1/2 rounded-md border border-[var(--border-subtle)] bg-[var(--tooltip-bg)] px-2.5 py-1.5 font-mono text-[10px] text-[var(--tooltip-text)] shadow-lg" style={{ left: tooltip.x, top: tooltip.y - 38 }}>{tooltip.text}</div>}
       {review && <ReviewOverlay type={review} mode={mode} onDismiss={() => setReview(null)} onAccept={acceptEdit} />}
       {toast && <Toast />}
     </div>
@@ -378,7 +378,7 @@ export function HighlightedText({ text, highlight, sourceLocation, setTooltip, o
   return (
     <>
       {before}
-      <mark onClick={(event) => { event.stopPropagation(); setTooltip({ text: `SOURCE: ${sourceLocation}`, x: event.clientX, y: event.clientY }); openSources() }} className="cursor-pointer rounded bg-[var(--highlight)] px-1 transition-colors hover:bg-[var(--highlight-hover)]">{highlight}</mark>
+      <mark onClick={(event) => { event.stopPropagation(); setTooltip({ text: `SOURCE: ${sourceLocation}`, x: event.clientX, y: event.clientY }); openSources() }} className="cursor-pointer rounded bg-[var(--highlight)] px-1 text-[var(--text-primary)] transition-colors hover:bg-[var(--highlight-hover)]">{highlight}</mark>
       {after}
     </>
   )
